@@ -2,22 +2,48 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42814" started-at="2019-12-04T16:08:54 IST" finished-at="2019-12-04T16:09:36 IST">
+  <suite name="Default suite" duration-ms="43146" started-at="2019-12-06T09:57:13 IST" finished-at="2019-12-06T09:57:56 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42814" started-at="2019-12-04T16:08:54 IST" finished-at="2019-12-04T16:09:36 IST">
+    <test name="Default test" duration-ms="43146" started-at="2019-12-06T09:57:13 IST" finished-at="2019-12-06T09:57:56 IST">
       <class name="com.DriverFactory.java.Testefc">
-        <test-method status="PASS" signature="loadbrowser()[pri:0, instance:com.DriverFactory.java.Testefc@18eed359]" name="loadbrowser" is-config="true" duration-ms="14275" started-at="2019-12-04T16:08:54 IST" finished-at="2019-12-04T16:09:08 IST">
+        <test-method status="PASS" signature="loadbrowser()[pri:0, instance:com.DriverFactory.java.Testefc@18eed359]" name="loadbrowser" is-config="true" duration-ms="14811" started-at="2019-12-06T09:57:13 IST" finished-at="2019-12-06T09:57:28 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadbrowser -->
-        <test-method status="FAIL" signature="AppTest()[pri:0, instance:com.DriverFactory.java.Testefc@18eed359]" name="AppTest" duration-ms="28473" started-at="2019-12-04T16:09:08 IST" finished-at="2019-12-04T16:09:36 IST">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="AppTest()[pri:0, instance:com.DriverFactory.java.Testefc@18eed359]" name="AppTest" duration-ms="28273" started-at="2019-12-06T09:57:28 IST" finished-at="2019-12-06T09:57:56 IST">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button class="btn btn-primary ng-star-inserted">...</button> is not clickable at point (1275, 131). Other element would receive the click: <div class="loader ng-star-inserted" style="color:red">...</div>
+  (Session info: chrome=78.0.3904.108)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-JIPFL18', ip: '192.168.100.114', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:63994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: db7eaf19a4fd220de4921ef6ce36bc41]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at com.Utilities.java.Excel.getCellData1(Excel.java:43)
-at com.Functionlib.java.Functions.Operationexpenses(Functions.java:1111)
-at com.DriverFactory.java.Testefc.AppTest(Testefc.java:27)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="btn btn-primary ng-star-inserted">...</button> is not clickable at point (1275, 131). Other element would receive the click: <div class="loader ng-star-inserted" style="color:red">...</div>
+  (Session info: chrome=78.0.3904.108)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-JIPFL18', ip: '192.168.100.114', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:63994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: db7eaf19a4fd220de4921ef6ce36bc41
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com.Functionlib.java.Functions.smeLoan(Functions.java:240)
+at com.DriverFactory.java.Testefc.AppTest(Testefc.java:18)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -49,7 +75,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AppTest -->
