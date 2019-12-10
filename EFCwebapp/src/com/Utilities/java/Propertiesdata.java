@@ -12,11 +12,7 @@ public class Propertiesdata {
 			return po.getProperty(key);
 			
 		}
-		public static void main(String[] args) throws Throwable {
-			
-			Propertiesdata s = new Propertiesdata();
-		System.out.println(	s.getkeyvalue("URL"));
-		}
+		
 
 	}
 

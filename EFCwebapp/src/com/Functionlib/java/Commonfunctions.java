@@ -1,9 +1,5 @@
 package com.Functionlib.java;
 
-	
-
-
-
 import java.io.IOException;
 
 import java.util.concurrent.TimeUnit;
@@ -30,18 +26,9 @@ public class Commonfunctions
 		public static   WebDriver startBrowser() throws Throwable
 		{
 			if(Propertiesdata.getkeyvalue("browser").equalsIgnoreCase("chrome"))
-			
 			{
-			//System.setProperty("webdriver.chrome.driver", "D:\\softwares files\\chromedriver.exe");
-				    driver = new ChromeDriver();
-
+				driver = new ChromeDriver();
 			}
-			else if(Propertiesdata.getkeyvalue("browser").equalsIgnoreCase("ie")){
-				System.setProperty("webdriver.ie.driver", "D:\\softwares files\\IEDriverServer.exe");
-				
-				driver = new InternetExplorerDriver();
-			}
-			
 			return driver;
 		}
 		
@@ -158,51 +145,13 @@ public class Commonfunctions
 					
 					act.moveToElement(driver.findElement(By.xpath("//li[@id='mi_a_stock_categories']//a[contains(text(),'Stock Categories')]"))).click().build().perform();
 					
-				
+			}	
+			
+	}
+ 	    
+ 	    	
 					
-			}
-			
-			public static void Login1() throws Throwable {
-				
-				System.out.println("Application started");
-				
-				System.out.println("title of application is:"+driver.getTitle());
-				System.out.println("Url of App is:"+driver.getCurrentUrl());
-				
-
-		             Thread.sleep(8000);
-					 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[1]/input[1]")).sendKeys("lo");
-					    Thread.sleep(2000);
-					 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[2]/input[1]")).sendKeys("123123");
-					    Thread.sleep(2000);
-					 driver.findElement(By.xpath("//div[4]/button[1]")).click();
-					 Thread.sleep(10000);
-					/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
-					 //System.out.println(loginStatus);
-					 if(driver.findElement(By.xpath("//div[1]/div[1]/span[1]")).isDisplayed()) {
-						 
-					
-						System.out.println("Test Passed::::::::::::::  Login Success");
-						
-					 }
-					      
-					 else {
-						
-						 System.out.println("Test Failed  Login Failed");
-					 }
-				
-					 }
-			
-			
-			
-			
-			
-		
-				
-				
-			}
-	     	    
-	     	    	 
+			 
 	     	     
 	     	     
 				

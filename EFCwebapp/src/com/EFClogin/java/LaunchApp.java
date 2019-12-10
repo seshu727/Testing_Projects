@@ -5,13 +5,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class LaunchApp {
+import com.Utilities.java.Propertiesdata;
+
+public class LaunchApp extends Propertiesdata {
 	protected static WebDriver driver;
 	
 	@BeforeTest
 	public static void loadbrowser() throws Throwable {
 		 driver = new ChromeDriver();
-		 driver.get("http://efcdev.firstaccess.co/");
+		 driver.get(getkeyvalue("URl"));
 		 driver.manage().window().maximize(); 
 		
 	}

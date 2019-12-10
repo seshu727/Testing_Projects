@@ -19,24 +19,27 @@ import org.testng.Assert;
 
 import com.EFClogin.java.LaunchApp;
 import com.Utilities.java.Excel;
+import com.Utilities.java.Propertiesdata;
 
 
 
-public class Functions extends LaunchApp {
+public class Functions extends Commonfunctions {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
 	static ClipboardOwner owner = null;
 	
 	public static void Login() throws Throwable {
-		waitForelement();
+		Propertiesdata property = new Propertiesdata();
+	     implicitWait(driver);
 		System.out.println("Application started");
 		
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
 		
              //Thread.sleep(1000);
-			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[1]/input[1]")).sendKeys("lo1");
+			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[1]/input[1]")).sendKeys(property.getkeyvalue("username"));
 			 //Thread.sleep(1000);
-			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[2]/input[1]")).sendKeys("123123");
+			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[2]/input[1]")).sendKeys(property.getkeyvalue("password"));
+			 //Thread.sleep(1000););
 			 //Thread.sleep(1000);
 			 driver.findElement(By.xpath("//div[4]/button[1]")).click();
 			 //Thread.sleep(5000);

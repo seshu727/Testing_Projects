@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.DriverFactory.java.Testefc">
+      <class name="Testingdemo.TestApp">
         <methods>
-          <include name="AppTest"/>
+          <include name="Login"/>
         </methods>
-      </class> <!-- com.DriverFactory.java.Testefc -->
+      </class> <!-- Testingdemo.TestApp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -5,7 +5,6 @@
     <classes>
       <class name="com.DriverFactory.java.Testefc">
         <methods>
-          <include name="loadbrowser"/>
           <include name="AppTest"/>
         </methods>
       </class> <!-- com.DriverFactory.java.Testefc -->
