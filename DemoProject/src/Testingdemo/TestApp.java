@@ -56,6 +56,7 @@ public class TestApp extends Commonfunctions {
 		alertsHandle();
 		staticwait(driver);
 		textofElement(driver, "xpath", p.getkeyvalue("nulltextboxxpath"));
+			syso........
 		
 		
 		}
