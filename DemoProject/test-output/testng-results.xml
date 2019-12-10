@@ -2,44 +2,21 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37485" started-at="2019-12-10T11:23:35 IST" finished-at="2019-12-10T11:24:13 IST">
+  <suite name="Default suite" duration-ms="62002" started-at="2019-12-10T18:03:25 IST" finished-at="2019-12-10T18:04:27 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37485" started-at="2019-12-10T11:23:35 IST" finished-at="2019-12-10T11:24:13 IST">
+    <test name="Default test" duration-ms="62002" started-at="2019-12-10T18:03:25 IST" finished-at="2019-12-10T18:04:27 IST">
       <class name="Testingdemo.TestApp">
-        <test-method status="FAIL" signature="Login()[pri:0, instance:Testingdemo.TestApp@6e1ec318]" name="Login" duration-ms="37422" started-at="2019-12-10T11:23:35 IST" finished-at="2019-12-10T11:24:13 IST">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method status="FAIL" signature="Login()[pri:0, instance:Testingdemo.TestApp@6e1ec318]" name="Login" duration-ms="61701" started-at="2019-12-10T18:03:25 IST" finished-at="2019-12-10T18:04:27 IST">
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[element click intercepted: Element <button _ngcontent-c11="" class="btn btn-primary" id="cf1-save" title="Save" type="button">...</button> is not clickable at point (721, 370). Other element would receive the click: <img width="150" src="assets/loaders/Loader3.gif">
-  (Session info: chrome=78.0.3904.108)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-JIPFL18', ip: '192.168.100.114', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:51498}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9f0e8fb94ce10c277fe12dba366f3c7e]]>
+              <![CDATA[Cannot find elements when the id is null.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-c11="" class="btn btn-primary" id="cf1-save" title="Save" type="button">...</button> is not clickable at point (721, 370). Other element would receive the click: <img width="150" src="assets/loaders/Loader3.gif">
-  (Session info: chrome=78.0.3904.108)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'DESKTOP-JIPFL18', ip: '192.168.100.114', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:51498}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 9f0e8fb94ce10c277fe12dba366f3c7e
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at Testingdemo.Commonfunctions.clickonButton(Commonfunctions.java:69)
-at Testingdemo.TestApp.Login(TestApp.java:48)
+              <![CDATA[java.lang.IllegalArgumentException: Cannot find elements when the id is null.
+at org.openqa.selenium.By$ById.<init>(By.java:171)
+at org.openqa.selenium.By.id(By.java:52)
+at Testingdemo.TestApp.Login(TestApp.java:68)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -71,7 +48,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
