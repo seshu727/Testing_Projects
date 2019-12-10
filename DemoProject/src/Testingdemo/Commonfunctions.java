@@ -1,5 +1,4 @@
 package Testingdemo;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -8,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,6 +23,9 @@ public class Commonfunctions
 		if (Propertiesdata1.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		}
+		else if (Propertiesdata1.getkeyvalue("browser").equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		}
 		return driver;
 	}
 
@@ -37,31 +39,29 @@ public class Commonfunctions
 	public static void clearingData(WebDriver driver, String locatortype, String locatorvalue) {
 		if (locatortype.equalsIgnoreCase("id")) {
 			driver.findElement(By.id(locatorvalue)).clear();
-			
-			
 		}
 		
 	}
 	public static void staticwait(WebDriver driver) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 	}
-	public static String textofElement(WebDriver driver, String locatortype, String locatorvalue) {
-
+	public static void textofElement(WebDriver driver, String locatortype, String locatorvalue) {
+      
 		if (locatortype.equalsIgnoreCase("id")) {
 
-		String textinelement=	driver.findElement(By.id(locatorvalue)).getText();
-		}
-		else if (locatortype.equalsIgnoreCase("xpath")) {
-		
-
-			String textinelement=	driver.findElement(By.id(locatorvalue)).getText();
-		}
-		return locatorvalue;
-
+	String data1=	driver.findElement(By.id(locatorvalue)).getText();
+	System.out.println(data1);
 		
 	}
 
+		else if (locatortype.equalsIgnoreCase("xpath")) {
+
+	String data1=	driver.findElement(By.id(locatorvalue)).getText();
+	System.out.println(data1);
+		
+	}
+	}
 	public static void clickonButton(WebDriver driver, String locatortype, String locatorvalue) throws Throwable {
 
 		if (locatortype.equalsIgnoreCase("id")) {
@@ -73,15 +73,11 @@ public class Commonfunctions
 
 			driver.findElement(By.id(locatorvalue)).click();
 		}
-
-
 	}
 
 	public static void toastMessages() throws Throwable {
 
-		String errormessage = new WebDriverWait(driver, 15)
-				.until(ExpectedConditions.elementToBeClickable(By.id(Propertiesdata1.getkeyvalue("toastid"))))
-				.getText();
+		String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(Propertiesdata1.getkeyvalue("toastid")))).getText();
 		String replacevalue=errormessage.replace("×", "");
 		System.out.println(replacevalue.trim());
 	}

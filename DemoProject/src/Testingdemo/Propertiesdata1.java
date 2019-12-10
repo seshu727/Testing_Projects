@@ -1,11 +1,8 @@
 package Testingdemo;
-
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class Propertiesdata1 {
-	
-			
+public class Propertiesdata1 {	
 	public static   String getkeyvalue(String key) throws Throwable{
 		Properties po = new Properties();
 		FileInputStream fis = new FileInputStream("C:\\Users\\PC\\Desktop\\appium1\\DemoProject\\DataEfc\\E.properties");
@@ -13,11 +10,11 @@ public class Propertiesdata1 {
 		return po.getProperty(key);
 		
 	}
-	
+
+}
+
 				
-				
-			}
-			
+							
 
 		
 
