@@ -43,10 +43,10 @@ public class Commonfunctions
 		
 	}
 	public static void staticwait(WebDriver driver) throws InterruptedException {
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 
 	}
-	public static void textofElement(WebDriver driver, String locatortype, String locatorvalue) {
+	public static String textofElement(WebDriver driver, String locatortype, String locatorvalue) {
       
 		if (locatortype.equalsIgnoreCase("id")) {
 
@@ -61,6 +61,7 @@ public class Commonfunctions
 	System.out.println(data1);
 		
 	}
+		return locatorvalue;
 	}
 	public static void clickonButton(WebDriver driver, String locatortype, String locatorvalue) throws Throwable {
 
@@ -79,7 +80,14 @@ public class Commonfunctions
 
 		String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(Propertiesdata1.getkeyvalue("toastid")))).getText();
 		String replacevalue=errormessage.replace("×", "");
-		System.out.println(replacevalue.trim());
+		//System.out.println(replacevalue.trim());
+		if(replacevalue.contains("Successfully")) {
+			System.out.println("Toast Message "+replacevalue.trim());
+			System.out.println("Data Added successfully");
+		}else if(replacevalue.contains("Company")){
+			System.out.println("Toast Message "+replacevalue.trim());
+			System.out.println("Data Adding Unsuccessful");
+		}
 	}
 
 	public static String sendingData(WebDriver driver, String locatortype, String locatorvalue, String data)
