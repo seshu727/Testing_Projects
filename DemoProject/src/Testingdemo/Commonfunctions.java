@@ -17,7 +17,7 @@ public class Commonfunctions
 {
 	static String value;
 
-	protected static WebDriver driver;
+	protected static WebDriver driver;     
 
 	public static WebDriver startBrowser() throws Throwable {
 		if (Propertiesdata1.getkeyvalue("browser").equalsIgnoreCase("chrome")) {

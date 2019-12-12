@@ -1,4 +1,4 @@
-package com.Functionlib.java;
+package com.Efc.Functionlib;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.Utilities.java.Propertiesdata;
+import com.Efc.Utilities.Propertiesdata;
 
 public class Commonfunctions
 

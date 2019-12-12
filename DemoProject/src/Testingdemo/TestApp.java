@@ -98,12 +98,16 @@ public class TestApp extends Commonfunctions {
 		sendingData(driver, "id", p.getkeyvalue("textboxemailid"), p.getkeyvalue("textboxemailvalue"));
 		clickonButton(driver, "id", p.getkeyvalue("savebtnid"));
 		toastMessages(); 
-		}
-		}
+		}	
 }
-	  
-	
-	
+}
+
+
+
+		
+		
+		
+				
 		
 		
 		

@@ -1,4 +1,4 @@
-package com.Utilities.java;
+package com.Efc.Utilities;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.DriverFactory.java.Testefc;
+import com.Efc.Driverfactory.Testefc;
 
 public class Screens  extends Testefc{
 

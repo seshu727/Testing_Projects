@@ -1,4 +1,4 @@
-package com.Functionlib.java;
+package com.Efc.Functionlib;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -17,9 +17,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.EFClogin.java.LaunchApp;
-import com.Utilities.java.Excel;
-import com.Utilities.java.Propertiesdata;
+import com.Efc.Utilities.Excel;
+import com.Efc.Utilities.Propertiesdata;
 
 
 

@@ -1,11 +1,11 @@
-package com.EFClogin.java;
+package com.Efc.Login;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.Utilities.java.Propertiesdata;
+import com.Efc.Utilities.Propertiesdata;
 
 public class LaunchApp extends Propertiesdata {
 	protected static WebDriver driver;
