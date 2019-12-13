@@ -1,55 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="92" started-at="2019-12-06T10:48:17 IST" finished-at="2019-12-06T10:48:17 IST">
+  <suite name="Default suite" duration-ms="117" started-at="2019-12-13T11:48:25 IST" finished-at="2019-12-13T11:48:25 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="92" started-at="2019-12-06T10:48:17 IST" finished-at="2019-12-06T10:48:17 IST">
-      <class name="com.DriverFactory.java.Testefc">
-        <test-method status="FAIL" signature="AppTest()[pri:0, instance:com.DriverFactory.java.Testefc@4e9ba398]" name="AppTest" duration-ms="15" started-at="2019-12-06T10:48:17 IST" finished-at="2019-12-06T10:48:17 IST">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at com.Functionlib.java.Commonfunctions.implicitWait(Commonfunctions.java:95)
-at com.Functionlib.java.Functions.Login(Functions.java:32)
-at com.DriverFactory.java.Testefc.AppTest(Testefc.java:15)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at org.testng.TestRunner$$Lambda$44/1596467899.accept(Unknown Source)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+    <test name="Default test" duration-ms="117" started-at="2019-12-13T11:48:25 IST" finished-at="2019-12-13T11:48:25 IST">
+      <class name="com.Efc.Driverfactory.Testefc">
+        <test-method status="PASS" signature="AppTest()[pri:0, instance:com.Efc.Driverfactory.Testefc@4e9ba398]" name="AppTest" duration-ms="30" started-at="2019-12-13T11:48:25 IST" finished-at="2019-12-13T11:48:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AppTest -->
-      </class> <!-- com.DriverFactory.java.Testefc -->
+      </class> <!-- com.Efc.Driverfactory.Testefc -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

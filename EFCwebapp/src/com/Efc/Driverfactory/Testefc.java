@@ -12,8 +12,8 @@ public class Testefc extends Functions {
 	
 	@Test
 	public static void AppTest() throws Throwable {
-		  Login();
-		 // clientCreation();
+	Login();		 
+	// clientCreation();
 		 //womenLoan();
 		//  smeLoan();
 		 //homeLoan();

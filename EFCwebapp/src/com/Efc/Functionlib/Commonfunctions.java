@@ -92,13 +92,10 @@ public class Commonfunctions
 				
 			}
 			public static void implicitWait(WebDriver driver){
-				driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 					
 			}
-			public static void closeBrowser(WebDriver driver){
-				
-				driver.close();
-			}
+			
 			public static void submitButton(WebDriver driver,String locatortype,String locatorvalue){
 				
 				if(locatortype.equalsIgnoreCase("xpath")){

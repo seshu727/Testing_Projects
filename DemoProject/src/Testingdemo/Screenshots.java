@@ -13,9 +13,9 @@ public  void takeScreenshot() throws Throwable {
 		
 		SimpleDateFormat date = new SimpleDateFormat("dd_yy_mm hh_ss_mm");
 		Date d = new Date();
-		String d1= date.format(d)	;	
+		String d1= date.format(d);	
 	         File file= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	       	FileUtils.copyFile(file, new File("./screenshotss/screen+"+d1+".png"));
+	       	FileUtils.copyFile(file, new File("./screens/screen+"+d1+".png"));
 	 	
 }
 
