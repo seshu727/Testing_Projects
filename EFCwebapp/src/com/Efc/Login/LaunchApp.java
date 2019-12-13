@@ -14,7 +14,6 @@ public class LaunchApp extends Propertiesdata {
 	public static void loadbrowser() throws Throwable {
 		 driver = new ChromeDriver();
 		 driver.get(getkeyvalue("URl"));
-		 Thread.sleep(4000);
 		 driver.manage().window().maximize(); 
 		
 	}
