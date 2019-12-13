@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -15,33 +16,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
+
+import com.Efc.Login.LaunchApp;
 import com.Efc.Utilities.Excel;
 import com.Efc.Utilities.Propertiesdata;
 
 
 
-public class Functions extends Commonfunctions {
+
+
+public class Functions extends LaunchApp {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
 	static ClipboardOwner owner = null;
+	static Propertiesdata property;
 	
 	public static void Login() throws Throwable {
-		Propertiesdata property = new Propertiesdata();
-	    // implicitWait(driver);
+		 property = new Propertiesdata();
+	
 		System.out.println("Application started");
 		
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
 		
-             //Thread.sleep(1000);
+             Thread.sleep(1000);
 			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[1]/input[1]")).sendKeys(property.getkeyvalue("username"));
-			 //Thread.sleep(1000);
+			 Thread.sleep(1000);
 			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[2]/input[1]")).sendKeys(property.getkeyvalue("password"));
-			 //Thread.sleep(1000););
+			 Thread.sleep(1000);
 			 //Thread.sleep(1000);
 			 driver.findElement(By.xpath("//div[4]/button[1]")).click();
-			 //Thread.sleep(5000);
+			 Thread.sleep(5000);
 			/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
 			 String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
 		        String expectedUrl= driver.getCurrentUrl();
@@ -51,6 +56,7 @@ public class Functions extends Commonfunctions {
 		    	 System.out.println("Test Passed");
 		    	 
 		     }else {
+		    	 toastMessages1();
 		    	 System.out.println("Test Failed");
 		     }
 	}
@@ -78,11 +84,27 @@ public class Functions extends Commonfunctions {
 			 
 			 System.out.println("File upload failed");
 		 }
-		 
 	}
+		 public static void toastMessages1() throws Throwable {
+
+				String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(property.getkeyvalue("toastid")))).getText();
+				String replacevalue=errormessage.replace("×", "");
+				//System.out.println(replacevalue.trim());
+				if(replacevalue.contains("Successfully")) {
+					System.out.println("Toast Message "+replacevalue.trim());
+					System.out.println("Data Added successfully");
+				}else if(replacevalue.contains("Company")){
+					System.out.println("Toast Message "+replacevalue.trim());
+					System.out.println("Data Adding Unsuccessful");
+				}
+	}
+		 public static void implicitwaitss() {
+			 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 }
+	
 			 
 			 public static void clientCreation() throws Throwable {
-				 implicitWait(driver);
+				 implicitwaitss();
 				 ////Thread.sleep(1000);
 			 driver.findElement(By.xpath("//div[@class='breadcrumb-widget']//a[@class='icon-bars sidebar-toggle']")).click();
 			 
@@ -164,7 +186,7 @@ public class Functions extends Commonfunctions {
 			 }
 			    	
 			 public static void  womenLoan() throws Throwable {
-				 implicitWait(driver);
+				implicitwaitss();
 				 System.out.println("New appraisal creation started");
 				 
 				// //Thread.sleep(10000);
@@ -222,7 +244,7 @@ public class Functions extends Commonfunctions {
 			    	
 	
 			 public static void smeLoan() throws Throwable {
-				 implicitWait(driver);
+				implicitwaitss();
 				 System.out.println("New appraisal creation started");
 				 
 					// //Thread.sleep(10000);
@@ -283,7 +305,7 @@ public class Functions extends Commonfunctions {
 				 
 			 
 			 public static void homeLoan() throws Throwable {
-				 implicitWait(driver);
+				implicitwaitss();
 				 
 				 System.out.println("New appraisal creation started");
 				
@@ -342,7 +364,7 @@ public class Functions extends Commonfunctions {
 			 }
 			 
 			 public static void clientInfoandbusiness() throws InterruptedException {
-            implicitWait(driver);
+           implicitwaitss();
 				 System.out.println("user in client info form");
 				 //Thread.sleep(5000);
 				 driver.findElement(By.xpath("//div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
@@ -424,7 +446,7 @@ public class Functions extends Commonfunctions {
 			 }
 		
 			 public static void loanApp() throws Throwable {
-				 implicitWait(driver);
+				implicitwaitss();
 				
 				 System.out.println("user at loan application form");
 				  //Thread.sleep(4000);
@@ -486,7 +508,7 @@ public class Functions extends Commonfunctions {
 			 }
 			 
 			 public static void Security() throws Throwable {
-				 implicitWait(driver);
+				implicitwaitss();
 				 
 				 System.out.println("user in security form");
 				 //Thread.sleep(2000);
@@ -567,7 +589,7 @@ public class Functions extends Commonfunctions {
                 
 			 }
 			 public static  void commonFields() throws InterruptedException {
-				 implicitWait(driver);
+				implicitwaitss();
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[1]/a[1]")).click(); 
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[2]/app-com-render[1]/div[1]/app-side-menu[1]/ul[1]/li[2]/a[1]/span[1]")).click(); 
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-data-list[1]/div[1]/p-table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/a[1]/span[1]/span[1]")).click(); 
@@ -577,7 +599,7 @@ public class Functions extends Commonfunctions {
 			 }
 			 
 			 public static void entrepreneurinfo() throws Throwable {
-				 implicitWait(driver);
+				implicitwaitss();
 				 
 		          // commonFields();
 		 
@@ -637,7 +659,7 @@ public class Functions extends Commonfunctions {
 			 
 				
 				 public static void businessProfile() throws Throwable {
-					 implicitWait(driver);
+					implicitwaitss();
 					 System.out.println("user in business profile page");
 					 
 						//Thread.sleep(10000);
@@ -695,7 +717,7 @@ public class Functions extends Commonfunctions {
 				 
 				//Monthly sales (daily estimation - current month)
 				 public static void sundaytomonday() throws Throwable {
-					 implicitWait(driver);
+					implicitwaitss();
 					 Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 					    String data=f.getCellData1("Sales", 0, 0);
 					    String data1=f.getCellData1("Sales", 0, 1);
@@ -719,7 +741,7 @@ public class Functions extends Commonfunctions {
 			
 				      //Monthly sales records
 					 public static  void salesmonthlycode() throws Throwable {
-						 implicitWait(driver);
+						implicitwaitss();
 							Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 						    String data=f.getCellData1("Sales", 0, 0);
 						    String data1=f.getCellData1("Sales", 0, 1);
@@ -749,7 +771,7 @@ public class Functions extends Commonfunctions {
 				 
 			public static void Sales() throws Throwable {
 				commonFields();
-				implicitWait(driver);
+				 implicitwaitss();
 				  //Thread.sleep(2000);
 				//driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/span[2]/a[1]")).click();
 				//Thread.sleep(7000);
@@ -957,7 +979,7 @@ public class Functions extends Commonfunctions {
 	 }
 			
 			public static void Purchases() throws Throwable {
-				implicitWait(driver);
+				 implicitwaitss();
 				
 				commonFields();
 				driver.findElement(By.xpath("//div[2]/ul[1]/li[2]/ul[1]/li[4]/div[1]/span[2]")).click();
@@ -1098,7 +1120,7 @@ public class Functions extends Commonfunctions {
 			public static void Operationexpenses() throws Throwable {
 				
 				commonFields();
-				implicitWait(driver);
+				 implicitwaitss();
 				driver.findElement(By.xpath("//ul[1]/li[2]/ul[1]/li[5]/div[1]/span[2]")).click();
 				//Rightarrow();
 				Excel excel = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");

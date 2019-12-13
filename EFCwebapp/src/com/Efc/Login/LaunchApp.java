@@ -5,26 +5,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.Efc.Driverfactory.Testefc;
 import com.Efc.Utilities.Propertiesdata;
 
-public class LaunchApp extends Propertiesdata {
+public class LaunchApp  {
 	public static WebDriver driver;
-	
+
 	@BeforeTest
 	public static void loadbrowser() throws Throwable {
+    Propertiesdata p = new Propertiesdata();
 		 driver = new ChromeDriver();
-		 driver.get(getkeyvalue("URl"));
+		driver.get(p.getkeyvalue("URL"));
 		 driver.manage().window().maximize(); 
 		
 	}
 	
-	/*
-	 * @AfterTest public static void closeBrowser() {
-	 * 
-	 * driver.close();
-	 * 
-	 * }
-	 */
+	
 	
 	
 	
