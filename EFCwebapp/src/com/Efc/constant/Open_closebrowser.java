@@ -1,16 +1,17 @@
-package com.Efc.Login;
+package com.Efc.constant;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.Efc.Driverfactory.Testefc;
+import com.Efc.Driverfactory.Testrun;
 import com.Efc.Utilities.Propertiesdata;
 
-public class LaunchApp  {
+public class Open_closebrowser  {
 	public static WebDriver driver;
 
+	@SuppressWarnings("static-access")
 	@BeforeTest
 	public static void loadbrowser() throws Throwable {
     Propertiesdata p = new Propertiesdata();
@@ -20,8 +21,10 @@ public class LaunchApp  {
 		
 	}
 	
-	
-	
+	@AfterTest
+	public static void closebrowser() {
+		driver.close();
+	}
 	
 	
 	

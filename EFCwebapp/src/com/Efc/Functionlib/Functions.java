@@ -1,10 +1,4 @@
 package com.Efc.Functionlib;
-
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.ClipboardOwner;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,23 +9,21 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-import com.Efc.Login.LaunchApp;
 import com.Efc.Utilities.Excel;
 import com.Efc.Utilities.Propertiesdata;
+import com.Efc.constant.Open_closebrowser;
 
-
-
-
-
-public class Functions extends LaunchApp {
+public class Functions extends Open_closebrowser {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
-	static ClipboardOwner owner = null;
-	static Propertiesdata property;
+	 static Propertiesdata property;
+	 static Commonfun fun;
 	
+	@SuppressWarnings("static-access")
 	public static void Login() throws Throwable {
+		fun = new Commonfun();
 		 property = new Propertiesdata();
 	
 		System.out.println("Application started");
@@ -39,96 +31,52 @@ public class Functions extends LaunchApp {
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
 		
-             Thread.sleep(3000);
-			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[1]/input[1]")).sendKeys(property.getkeyvalue("username"));
-			 Thread.sleep(1000);
-			 driver.findElement(By.xpath("//zc-block-tree-node[1]/app-com-render[2]/div[1]/zc-widget-login[1]/div[1]/div[1]/form[1]/div[2]/input[1]")).sendKeys(property.getkeyvalue("password"));
-			 Thread.sleep(1000);
-			 Thread.sleep(1000);
-			 driver.findElement(By.xpath("//div[4]/button[1]")).click();
-			 Thread.sleep(5000);
+		fun.sendingData(driver, "xpath", property.getkeyvalue("userid"), property.getkeyvalue("username"));
+		fun.sendingData(driver, "xpath", property.getkeyvalue("passwordid"),property.getkeyvalue("password"));
+	    driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+			
 			/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
 			 String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
 		        String expectedUrl= driver.getCurrentUrl();
-		    //      Assert.assertEquals(actualUrl, expectedUrl);
+		        //Assert.assertEquals(actualUrl, expectedUrl);
 		        
 		     if(actualUrl.equalsIgnoreCase(expectedUrl)) {
 		    	 System.out.println("Test Passed");
-		    	 
+		    	 fun.staticwait(driver);
 		     }else {
 		    	 //toastMessages1();
 		    	 System.out.println("Test Failed");
 		     }
 	}
 		        
-	
-	
-	
-	public static void fileUpload() throws Throwable {
-		
-		
-		StringSelection s = new StringSelection("C:\\Users\\PC\\Pictures\\Screenshots\\Screenshot (1).png");
-		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, owner);
-		 Robot r = new Robot();
-		 r.setAutoDelay(1000);
-		 r.keyPress(KeyEvent.VK_CONTROL);
-		 r.keyPress(KeyEvent.VK_V);
-		 r.keyRelease(KeyEvent.VK_CONTROL);
-		 r.keyRelease(KeyEvent.VK_V);
-		 r.keyPress(KeyEvent.VK_ENTER);
-		 r.keyRelease(KeyEvent.VK_ENTER);
-		 //Thread.sleep(10000);  
-		 if(driver.findElement(By.xpath("//zc-wrapper-validation-messages[1]/zc-file[1]/div[2]/ul[1]/li[1]/span[1]")).isDisplayed()) {
-			 System.out.println("File uploaded success");
-		 }else {
-			 
-			 System.out.println("File upload failed");
-		 }
+	@SuppressWarnings("static-access")
+	public static void navigatesToclientcreation() throws Throwable {
+        fun.staticwait(driver);
+		fun.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
+		fun.clickonButton(driver, "xpath", (property.getkeyvalue("clientid")));
+		fun.clickonButton(driver, "xpath", (property.getkeyvalue("Addclientbtnid")));	
 	}
-		 public static void toastMessages1() throws Throwable {
-
-				String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(property.getkeyvalue("toastid1")))).getText();
-				String replacevalue=errormessage.replace("×", "");
-				//System.out.println(replacevalue.trim());
-				if(replacevalue.contains("Successfully")) {
-					System.out.println("Toast Message "+replacevalue.trim());
-					System.out.println("Data Added successfully");
-				}else if(replacevalue.contains("Company")){
-					System.out.println("Toast Message "+replacevalue.trim());
-					System.out.println("Data Adding Unsuccessful");
-				}
-				else if(replacevalue.contains("Invalid")){
-					System.out.println("Toast Message "+replacevalue.trim());
-					System.out.println("Unsuccessful");
-				}
-	}
-		 public static void implicitwaitss() {
-			 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		 }
 	
+	@SuppressWarnings("static-access")
+	public static void navigatesTonewAppraisal() throws Throwable {
+		
+		fun.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
+		fun.clickonButton(driver, "xpath", (property.getkeyvalue("appraisalid")));
+		fun.clickonButton(driver, "xpath", (property.getkeyvalue("Appraisalbtnid")));	
+	}
 			 
+			 @SuppressWarnings("static-access")
 			 public static void clientCreation() throws Throwable {
-				 implicitwaitss();
-				 Thread.sleep(1000);
-			 driver.findElement(By.xpath("//div[@class='breadcrumb-widget']//a[@class='icon-bars sidebar-toggle']")).click();
-			 
-			 driver.findElement(By.xpath("//div[1]/app-side-menu[1]/ul[1]/li[3]/a[1]/span[1]")).click();
-			 Thread.sleep(1000);
-			 driver.findElement(By.xpath("//button[@class='btn btn-primary ng-star-inserted']")).click();
-			 Thread.sleep(1000);
-			//String basicpage = driver.findElement(By.xpath("//formly-field[1]/zc-view-wrapper[1]/zc-field-blog[1]/div[1]/div[1]")).getText();
-			//System.out.println("Client 1st form:::::::"+basicpage);
-			
-			Thread.sleep(2000);
-			// driver.close();
-			System.out.println("Client creation started");
-					 driver.findElement(By.xpath("//input[@id='name']")).sendKeys("Priya");
-					 Thread.sleep(1000);
-					 driver.findElement(By.cssSelector("#client_number")).sendKeys("123123123123");
-					 Thread.sleep(2000);
-					 driver.findElement(By.cssSelector("body.sidebar.sidebar-icons:nth-child(2) div.main-content div.p-contain zc-block-tree-node.block div.ng-star-inserted div.row.no-gutters.ng-star-inserted div.col div.zc-widget-form.zc-panel.zc-contact-form form.ng-invalid.ng-star-inserted.ng-dirty.ng-touched formly-form.row formly-field.col-md-6.col-sm-12.ng-star-inserted:nth-child(4) zc-wrapper-label.ng-star-inserted zc-wrapper-fieldset.ng-star-inserted div.form-group zc-wrapper-validation-messages.ng-star-inserted zc-field-radio.ng-star-inserted div.ng-star-inserted div.radio.ng-star-inserted:nth-child(1) label.custom-control.custom-radio > span.custom-control-label")).click();
-					 Thread.sleep(1000);
-					 driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/label[1]")).click();
+		        	System.out.println("Client creation started");
+					 fun.sendingData(driver, "id", property.getkeyvalue("clientnameid"),property.getkeyvalue("clientnamevalue"));
+					 fun.sendingData(driver, "id", property.getkeyvalue("clientnumberid"),property.getkeyvalue("clientnumbervalue"));
+					fun.clickonButton(driver, "id", property.getkeyvalue("repeatid"));
+					fun.clickonButton(driver, "xpath", property.getkeyvalue("clientType"));
+					WebElement wb =  driver.findElement(By.xpath(property.getkeyvalue("clientType")));
+					Select sec = new Select(wb);
+					sec.selectByIndex(1);
+					
+				    driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/label[1]")).click();
 					// Select s =  new Select(driver.findElement(By.cssSelector("body.sidebar.sidebar-icons:nth-child(2) div.main-content div.p-contain zc-block-tree-node.block div.ng-star-inserted div.row.no-gutters.ng-star-inserted div.col div.zc-widget-form.zc-panel.zc-contact-form form.ng-invalid.ng-star-inserted.ng-dirty.ng-touched formly-form.row formly-field.col-md-6.col-sm-12.ng-star-inserted:nth-child(5) zc-wrapper-label.ng-star-inserted zc-wrapper-fieldset.ng-star-inserted div.form-group zc-wrapper-validation-messages.ng-star-inserted zc-field-select.ng-star-inserted div.ng-star-inserted p-dropdown.ng-tns-c10-0.ng-untouched.ng-pristine.ng-valid.ng-star-inserted div.ng-tns-c10-0.ui-dropdown.ui-widget.ui-state-default.ui-corner-all.ui-helper-clearfix.ui-dropdown-clearable > div.ui-dropdown-trigger.ui-state-default.ui-corner-right:nth-child(4)")));
 					 Thread.sleep(2000);
 				    //	s.selectByIndex(1);
@@ -145,7 +93,7 @@ public class Functions extends LaunchApp {
 					 driver.findElement(By.xpath("//div[@class='custom-file ng-star-inserted']")).click();
 					 Thread.sleep(1000);
 					 //uploading file
-					 fileUpload();
+					 fun.fileUpload();
 		
 					driver.findElement(By.xpath("//formly-field[15]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-input[1]/div[1]/input[1]")).sendKeys("online");
 					Thread.sleep(2000);
@@ -177,7 +125,7 @@ public class Functions extends LaunchApp {
 				String dataoftable =cols.get(0).getText();
 				System.out.println(dataoftable);
 					
-			    	   if(dataoftable.equalsIgnoreCase("priya")) {
+			    	   if(dataoftable.equalsIgnoreCase("mizba")) {
 			    		   System.out.println("Client creation success");
 			    		   System.out.println("Test passed:::::::::::");
 			    		   
@@ -190,7 +138,7 @@ public class Functions extends LaunchApp {
 			 }
 			    	
 			 public static void  womenLoan() throws Throwable {
-				implicitwaitss();
+			
 				 System.out.println("New appraisal creation started");
 				 
 				Thread.sleep(10000);
@@ -248,7 +196,7 @@ public class Functions extends LaunchApp {
 			    	
 	
 			 public static void smeLoan() throws Throwable {
-				implicitwaitss();
+		
 				 System.out.println("New appraisal creation started");
 				 
 					Thread.sleep(10000);
@@ -310,7 +258,7 @@ public class Functions extends LaunchApp {
 				 
 			 
 			 public static void homeLoan() throws Throwable {
-				implicitwaitss();
+			
 				 
 				 System.out.println("New appraisal creation started");
 				
@@ -360,8 +308,9 @@ public class Functions extends LaunchApp {
 				a.build().perform();
 			   
 				
-				 Thread.sleep(5000);
-				driver.findElement(By.xpath("//formly-form[1]/formly-field[9]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-input[1]/div[1]/input[1]")).sendKeys("12");		
+				 Thread.sleep(6000);
+				 driver.findElement(By.id("business_information_no_of_yrs_in_bus")).clear();
+				driver.findElement(By.id("business_information_no_of_yrs_in_bus")).sendKeys("12");		
 				 Thread.sleep(2000);
 				driver.findElement(By.xpath("//div[1]/form[1]/formly-form[1]/div[1]/button[2]")).click();
 				 
@@ -451,11 +400,11 @@ public class Functions extends LaunchApp {
 			 }
 		
 			 public static void loanApp() throws Throwable {
-				implicitwaitss();
+
 				
 				 System.out.println("user at loan application form");
 				  Thread.sleep(4000);
-				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/div[2]/div[3]/div[1]/div[2]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[1]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-currency-field[1]/div[1]/div[2]/div[1]/input[1]")).sendKeys("100000000");
+				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/div[2]/div[3]/div[1]/div[2]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[1]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-currency-field[1]/div[1]/div[2]/div[1]/input[1]")).sendKeys("5000000");
 				 Thread.sleep(2000);
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/div[2]/div[3]/div[1]/div[2]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[2]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-input[1]/div[1]/input[1]")).sendKeys("12");
 				 Thread.sleep(2000);
@@ -513,7 +462,7 @@ public class Functions extends LaunchApp {
 			 }
 			 
 			 public static void Security() throws Throwable {
-				implicitwaitss();
+				
 				 
 				 System.out.println("user in security form");
 				 Thread.sleep(2000);
@@ -550,12 +499,12 @@ public class Functions extends LaunchApp {
 
 				 Thread.sleep(2000);
 				 
-				 driver.findElement(By.xpath("//div[2]/div[2]/ul[1]/li[1]/ul[1]/li[4]/div[1]/span[2]")).click();
+				 driver.findElement(By.xpath("//input[@type='button']")).click();
 				 Thread.sleep(7000);
 					
 				// driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/button[2]")).click();
 
-				 driver.findElement(By.xpath("//button[@class='btn btn-success ng-star-inserted']")).click();
+				// driver.findElement(By.xpath("//button[@class='btn btn-success ng-star-inserted']")).click();
 				 Thread.sleep(4000);
 				 System.out.println("security");
 				// driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/zc-stage-view[1]/div[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[3]/a[1]")).click();
@@ -595,7 +544,7 @@ public class Functions extends LaunchApp {
                 
 			 }
 			 public static  void commonFields() throws InterruptedException {
-				implicitwaitss();
+	
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[1]/a[1]")).click(); 
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[2]/app-com-render[1]/div[1]/app-side-menu[1]/ul[1]/li[2]/a[1]/span[1]")).click(); 
 				 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-data-list[1]/div[1]/p-table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/a[1]/span[1]/span[1]")).click(); 
@@ -605,7 +554,7 @@ public class Functions extends LaunchApp {
 			 }
 			 
 			 public static void entrepreneurinfo() throws Throwable {
-				implicitwaitss();
+			
 				 
 		          commonFields();
 		 
@@ -665,13 +614,13 @@ public class Functions extends LaunchApp {
 			 
 				
 				 public static void businessProfile() throws Throwable {
-					implicitwaitss();
+				
 					 System.out.println("user in business profile page");
 					 
 						Thread.sleep(10000);
 					 driver.findElement(By.xpath("//div[1]/zc-wrapper-validation-messages[1]/zc-file[1]/div[1]")).click();
 						
-						fileUpload();
+						fun.fileUpload();
 					 System.out.println("done");
 				
 					 ((JavascriptExecutor)driver).executeScript("window.scrollBy(50,200)");
@@ -723,7 +672,7 @@ public class Functions extends LaunchApp {
 				 
 				//Monthly sales (daily estimation - current month)
 				 public static void sundaytomonday() throws Throwable {
-					implicitwaitss();
+			
 					 Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 					    String data=f.getCellData1("Sales", 0, 0);
 					    String data1=f.getCellData1("Sales", 0, 1);
@@ -747,7 +696,7 @@ public class Functions extends LaunchApp {
 			
 				      //Monthly sales records
 					 public static  void salesmonthlycode() throws Throwable {
-						implicitwaitss();
+			
 							Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 						    String data=f.getCellData1("Sales", 0, 0);
 						    String data1=f.getCellData1("Sales", 0, 1);
@@ -777,7 +726,7 @@ public class Functions extends LaunchApp {
 				 
 			public static void Sales() throws Throwable {
 				commonFields();
-				 implicitwaitss();
+				  
 				  Thread.sleep(2000);
 				//driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-stage-form[1]/zc-stage-form[1]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/span[2]/a[1]")).click();
 				Thread.sleep(7000);
@@ -985,7 +934,7 @@ public class Functions extends LaunchApp {
 	 }
 			
 			public static void Purchases() throws Throwable {
-				 implicitwaitss();
+				  
 				
 			//	commonFields();
 				driver.findElement(By.xpath("//div[2]/ul[1]/li[2]/ul[1]/li[4]/div[1]/span[2]")).click();
@@ -1126,7 +1075,7 @@ public class Functions extends LaunchApp {
 			public static void Operationexpenses() throws Throwable {
 				
 				//commonFields();
-				 implicitwaitss();
+				  
 				driver.findElement(By.xpath("//ul[1]/li[2]/ul[1]/li[5]/div[1]/span[2]")).click();
 				//Rightarrow();
 				Excel excel = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
