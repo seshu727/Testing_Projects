@@ -8,9 +8,9 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.Efc.Driverfactory.Testrun;
+import com.Efc.Driverfactory.Driverscript;
 
-public class Screens  extends Testrun{
+public class Screens  extends Driverscript{
 
 	
 	

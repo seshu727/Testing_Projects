@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Efc.Driverfactory.Testefc">
+      <class name="com.Efc.Driverfactory.Driverscript">
         <methods>
-          <include name="loadbrowser"/>
+          <include name="closebrowser"/>
           <include name="AppTest"/>
+          <include name="loadbrowser"/>
         </methods>
-      </class> <!-- com.Efc.Driverfactory.Testefc -->
+      </class> <!-- com.Efc.Driverfactory.Driverscript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

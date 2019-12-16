@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.Efc.Driverfactory.Testrun;
+import com.Efc.Driverfactory.Driverscript;
 import com.Efc.Utilities.Propertiesdata;
 
 public class Open_closebrowser  {

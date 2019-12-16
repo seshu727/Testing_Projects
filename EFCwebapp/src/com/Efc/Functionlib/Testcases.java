@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,16 +15,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Utilities.Excel;
 import com.Efc.Utilities.Propertiesdata;
+import com.Efc.commonlibs.Commonmethods;
 import com.Efc.constant.Open_closebrowser;
 
-public class Functions extends Open_closebrowser {
+public class Testcases extends Open_closebrowser {
+	 protected static WebDriver driver;
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
 	 static Propertiesdata property;
-	 static Commonfun fun;
+	 static Commonmethods fun;
+	
 	
 	@SuppressWarnings("static-access")
 	public static void Login() throws Throwable {
-		fun = new Commonfun();
+	
 		 property = new Propertiesdata();
 	
 		System.out.println("Application started");

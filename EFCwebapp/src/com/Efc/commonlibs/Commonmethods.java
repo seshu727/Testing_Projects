@@ -1,4 +1,5 @@
-package com.Efc.Functionlib;
+package com.Efc.commonlibs;
+
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.ClipboardOwner;
@@ -8,24 +9,19 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Utilities.Propertiesdata;
 
-public class Commonfun 
-
-{
+public class Commonmethods  {
+	protected static WebDriver driver;
 	static String value;
-	public static WebDriver driver;    
 	static ClipboardOwner owner = null;
 	static int sleeptime =1000;
 
@@ -228,5 +224,6 @@ public static void fileUpload() throws Throwable {
 				.click().build().perform();
 
 	}
+
 
 }

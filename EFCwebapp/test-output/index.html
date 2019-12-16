@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\PC\AppData\Local\Temp\testng-eclipse-229380251\testng-customsuite.xml</span>
+                    <span>C:\Users\PC\AppData\Local\Temp\testng-eclipse--585436439\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Efc.Driverfactory.Testefc" hash-for-method="AppTest">AppTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.Efc.Driverfactory.Driverscript" hash-for-method="AppTest">AppTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,7 +120,7 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.Efc.Driverfactory.Testefc</span>
+              <span class="class-name">com.Efc.Driverfactory.Driverscript</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -128,32 +128,9 @@
                   <a name="AppTest">
                   </a> <!-- AppTest -->
                   <span class="method-name">AppTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#\/\/input\[\@type\=\&apos;text\&apos;\]&quot;}
-  (Session info: chrome=78.0.3904.108)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;DESKTOP-JIPFL18&apos;, ip: &apos;192.168.100.114&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:51948}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4b04b5ca82c618845ebeaa563cff6610
-*** Element info: {Using=id, value=//input[@type=&apos;text&apos;]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.Efc.Functionlib.Commonfun.sendingData(Commonfun.java:141)
-	at com.Efc.Functionlib.Functions.Login(Functions.java:35)
-	at com.Efc.Driverfactory.Testefc.AppTest(Testefc.java:15)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.Efc.Functionlib.Testcases.Login(Testcases.java:35)
+	at com.Efc.Driverfactory.Driverscript.AppTest(Driverscript.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -166,7 +143,7 @@ Session ID: 4b04b5ca82c618845ebeaa563cff6610
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at org.testng.TestRunner$$Lambda$242/1042790962.accept(Unknown Source)
+	at org.testng.TestRunner$$Lambda$242/2130192211.accept(Unknown Source)
 	at java.util.ArrayList.forEach(Unknown Source)
 	at org.testng.TestRunner.privateRun(TestRunner.java:770)
 	at org.testng.TestRunner.run(TestRunner.java:591)
@@ -192,7 +169,7 @@ Session ID: 4b04b5ca82c618845ebeaa563cff6610
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\PC\AppData\Local\Temp\testng-eclipse-229380251\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\PC\AppData\Local\Temp\testng-eclipse--585436439\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -201,7 +178,7 @@ Session ID: 4b04b5ca82c618845ebeaa563cff6610
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.Efc.Driverfactory.Testefc&quot;/&gt;
+      &lt;class name=&quot;com.Efc.Driverfactory.Driverscript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -244,13 +221,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'AppTest')
-data.setCell(0, 2, 'com.Efc.Driverfactory.Testefc')
-data.setCell(0, 3, 87);
+data.setCell(0, 2, 'com.Efc.Driverfactory.Driverscript')
+data.setCell(0, 3, 10);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 87 ms</span>
+              <span class="suite-total-time">Total running time: 10 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -276,7 +253,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.Efc.Driverfactory.Testefc</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.Efc.Driverfactory.Driverscript</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">loadbrowser</span>
                 <span class="method-start">0 ms</span>
@@ -285,8 +262,12 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">AppTest</span>
-                <span class="method-start">17589 ms</span>
+                <span class="method-start">16146 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">closebrowser</span>
+                <span class="method-start">16172 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
