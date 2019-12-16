@@ -1,4 +1,4 @@
-package com.Efc.commonlibs;
+package com.Efc.Functionlib;
 
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Efc.Utilities.Propertiesdata;
 
 public class Commonmethods  {
-	protected static WebDriver driver;
+   static WebDriver driver;
 	static String value;
 	static ClipboardOwner owner = null;
 	static int sleeptime =2000;

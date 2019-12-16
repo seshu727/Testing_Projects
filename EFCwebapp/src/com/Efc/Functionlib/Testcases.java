@@ -2,7 +2,6 @@ package com.Efc.Functionlib;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -15,26 +14,29 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Utilities.Excel;
 import com.Efc.Utilities.Propertiesdata;
-import com.Efc.commonlibs.Commonmethods;
 import com.Efc.constant.Open_closebrowser;
 
 public class Testcases extends Open_closebrowser {
-	 protected static WebDriver driver;
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
 	 static Propertiesdata property;
-	 static Commonmethods fun;
+	 static Commonmethods co;
 	
 
+	@SuppressWarnings("static-access")
 	public static void Login() throws Throwable {
-	
+	  try { co=new Commonmethods();
 		 property = new Propertiesdata();
-	     fun.staticwait(driver);
+	     co.staticwait(driver);
 		System.out.println("Application started");
+		
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
-		fun.sendingData(driver, "xpath", property.getkeyvalue("userid"), property.getkeyvalue("username"));
-		fun.sendingData(driver, "xpath", property.getkeyvalue("passwordid"),property.getkeyvalue("password"));
-	    fun.clickonButton(driver, "xpath", property.getkeyvalue("loginbtnid"));
+		co.staticwait(driver);
+		co.sendingData(driver, "xpath", property.getkeyvalue("userid"), property.getkeyvalue("username"));
+		co.staticwait(driver);
+		co.sendingData(driver, "xpath", property.getkeyvalue("passwordid"),property.getkeyvalue("password"));
+		co.staticwait(driver);
+	    co.clickonButton(driver, "xpath", property.getkeyvalue("loginbtnid"));
 			
 			/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
 			 String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
@@ -43,36 +45,39 @@ public class Testcases extends Open_closebrowser {
 		        
 		     if(actualUrl.equalsIgnoreCase(expectedUrl)) {
 		    	 System.out.println("Test Passed");
-		    	 fun.staticwait(driver);
+		    	 co.staticwait(driver);
 		     }else {
 		    	 //toastMessages1();
 		    	 System.out.println("Test Failed");
 		     }
+	  }catch (Exception e) {
+		System.out.println(e.getMessage());
+	}
 	}
 		        
 	@SuppressWarnings("static-access")
 	public static void navigatesToclientcreation() throws Throwable {
-        fun.staticwait(driver);
-		fun.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
-		fun.clickonButton(driver, "xpath", (property.getkeyvalue("clientid")));
-		fun.clickonButton(driver, "xpath", (property.getkeyvalue("Addclientbtnid")));	
+        co.staticwait(driver);
+		co.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
+		co.clickonButton(driver, "xpath", (property.getkeyvalue("clientid")));
+		co.clickonButton(driver, "xpath", (property.getkeyvalue("Addclientbtnid")));	
 	}
 	
 	@SuppressWarnings("static-access")
 	public static void navigatesTonewAppraisal() throws Throwable {
 		
-		fun.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
-		fun.clickonButton(driver, "xpath", (property.getkeyvalue("appraisalid")));
-		fun.clickonButton(driver, "xpath", (property.getkeyvalue("Appraisalbtnid")));	
+		co.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
+		co.clickonButton(driver, "xpath", (property.getkeyvalue("appraisalid")));
+		co.clickonButton(driver, "xpath", (property.getkeyvalue("Appraisalbtnid")));	
 	}
 			 
 			 @SuppressWarnings("static-access")
 			 public static void clientCreation() throws Throwable {
 		        	System.out.println("Client creation started");
-					 fun.sendingData(driver, "id", property.getkeyvalue("clientnameid"),property.getkeyvalue("clientnamevalue"));
-					 fun.sendingData(driver, "id", property.getkeyvalue("clientnumberid"),property.getkeyvalue("clientnumbervalue"));
-					fun.clickonButton(driver, "id", property.getkeyvalue("repeatid"));
-					fun.clickonButton(driver, "xpath", property.getkeyvalue("clientType"));
+					 co.sendingData(driver, "id", property.getkeyvalue("clientnameid"),property.getkeyvalue("clientnamevalue"));
+					 co.sendingData(driver, "id", property.getkeyvalue("clientnumberid"),property.getkeyvalue("clientnumbervalue"));
+					co.clickonButton(driver, "id", property.getkeyvalue("repeatid"));
+					co.clickonButton(driver, "xpath", property.getkeyvalue("clientType"));
 					WebElement wb =  driver.findElement(By.xpath(property.getkeyvalue("clientType")));
 					Select sec = new Select(wb);
 					sec.selectByIndex(1);
@@ -94,7 +99,7 @@ public class Testcases extends Open_closebrowser {
 					 driver.findElement(By.xpath("//div[@class='custom-file ng-star-inserted']")).click();
 					 Thread.sleep(1000);
 					 //uploading file
-					 fun.fileUpload();
+					 co.fileUpload();
 		
 					driver.findElement(By.xpath("//formly-field[15]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-input[1]/div[1]/input[1]")).sendKeys("online");
 					Thread.sleep(2000);
@@ -621,7 +626,7 @@ public class Testcases extends Open_closebrowser {
 						Thread.sleep(10000);
 					 driver.findElement(By.xpath("//div[1]/zc-wrapper-validation-messages[1]/zc-file[1]/div[1]")).click();
 						
-						fun.fileUpload();
+						co.fileUpload();
 					 System.out.println("done");
 				
 					 ((JavascriptExecutor)driver).executeScript("window.scrollBy(50,200)");
