@@ -6,6 +6,7 @@
       <class name="com.Efc.Driverfactory.Testrun">
         <methods>
           <include name="AppTesting"/>
+          <include name="loadbrowser"/>
         </methods>
       </class> <!-- com.Efc.Driverfactory.Testrun -->
     </classes>

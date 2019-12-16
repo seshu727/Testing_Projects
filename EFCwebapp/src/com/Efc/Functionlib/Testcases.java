@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,25 +17,26 @@ import com.Efc.constant.Open_closebrowser;
 
 public class Testcases extends Open_closebrowser {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
-	 static Propertiesdata property;
-	 static Commonmethods co;
+	 static Propertiesdata p1;
+	 static commonfunlib co;
 	
 
 	@SuppressWarnings("static-access")
 	public static void Login() throws Throwable {
-	  try { co=new Commonmethods();
-		 property = new Propertiesdata();
+	     new commonfunlib();
+		 p1 = new Propertiesdata();
 	     co.staticwait(driver);
 		System.out.println("Application started");
 		
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
+		System.out.println(p1.getkeyvalue("userid"));
 		co.staticwait(driver);
-		co.sendingData(driver, "xpath", property.getkeyvalue("userid"), property.getkeyvalue("username"));
+		co.sendingData(driver, "xpath", p1.getkeyvalue("userid"), p1.getkeyvalue("username"));
 		co.staticwait(driver);
-		co.sendingData(driver, "xpath", property.getkeyvalue("passwordid"),property.getkeyvalue("password"));
+		co.sendingData(driver, "xpath", p1.getkeyvalue("passwordid"),p1.getkeyvalue("password"));
 		co.staticwait(driver);
-	    co.clickonButton(driver, "xpath", property.getkeyvalue("loginbtnid"));
+	    co.clickonButton(driver, "xpath", p1.getkeyvalue("loginbtnid"));
 			
 			/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
 			 String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
@@ -50,35 +50,33 @@ public class Testcases extends Open_closebrowser {
 		    	 //toastMessages1();
 		    	 System.out.println("Test Failed");
 		     }
-	  }catch (Exception e) {
-		System.out.println(e.getMessage());
-	}
+	  
 	}
 		        
 	@SuppressWarnings("static-access")
 	public static void navigatesToclientcreation() throws Throwable {
         co.staticwait(driver);
-		co.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
-		co.clickonButton(driver, "xpath", (property.getkeyvalue("clientid")));
-		co.clickonButton(driver, "xpath", (property.getkeyvalue("Addclientbtnid")));	
+		co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
+		co.clickonButton(driver, "xpath", (p1.getkeyvalue("clientid")));
+		co.clickonButton(driver, "xpath", (p1.getkeyvalue("Addclientbtnid")));	
 	}
 	
 	@SuppressWarnings("static-access")
 	public static void navigatesTonewAppraisal() throws Throwable {
 		
-		co.clickonButton(driver, "xpath", (property.getkeyvalue("menuid")));
-		co.clickonButton(driver, "xpath", (property.getkeyvalue("appraisalid")));
-		co.clickonButton(driver, "xpath", (property.getkeyvalue("Appraisalbtnid")));	
+		co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
+		co.clickonButton(driver, "xpath", (p1.getkeyvalue("appraisalid")));
+		co.clickonButton(driver, "xpath", (p1.getkeyvalue("Appraisalbtnid")));	
 	}
 			 
 			 @SuppressWarnings("static-access")
 			 public static void clientCreation() throws Throwable {
 		        	System.out.println("Client creation started");
-					 co.sendingData(driver, "id", property.getkeyvalue("clientnameid"),property.getkeyvalue("clientnamevalue"));
-					 co.sendingData(driver, "id", property.getkeyvalue("clientnumberid"),property.getkeyvalue("clientnumbervalue"));
-					co.clickonButton(driver, "id", property.getkeyvalue("repeatid"));
-					co.clickonButton(driver, "xpath", property.getkeyvalue("clientType"));
-					WebElement wb =  driver.findElement(By.xpath(property.getkeyvalue("clientType")));
+					 co.sendingData(driver, "id", p1.getkeyvalue("clientnameid"),p1.getkeyvalue("clientnamevalue"));
+					 co.sendingData(driver, "id", p1.getkeyvalue("clientnumberid"),p1.getkeyvalue("clientnumbervalue"));
+					co.clickonButton(driver, "id", p1.getkeyvalue("repeatid"));
+					co.clickonButton(driver, "xpath", p1.getkeyvalue("clientType"));
+					WebElement wb =  driver.findElement(By.xpath(p1.getkeyvalue("clientType")));
 					Select sec = new Select(wb);
 					sec.selectByIndex(1);
 					

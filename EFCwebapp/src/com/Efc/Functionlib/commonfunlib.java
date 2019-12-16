@@ -19,11 +19,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Utilities.Propertiesdata;
 
-public class Commonmethods  {
+public class commonfunlib  {
    static WebDriver driver;
 	static String value;
 	static ClipboardOwner owner = null;
-	static int sleeptime =2000;
+	static int sleeptime =3000;
 
 	public static WebDriver startBrowser() throws Throwable {
 		if (Propertiesdata.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
