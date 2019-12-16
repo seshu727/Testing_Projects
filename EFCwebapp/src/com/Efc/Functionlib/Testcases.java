@@ -24,20 +24,17 @@ public class Testcases extends Open_closebrowser {
 	 static Propertiesdata property;
 	 static Commonmethods fun;
 	
-	
-	@SuppressWarnings("static-access")
+
 	public static void Login() throws Throwable {
 	
 		 property = new Propertiesdata();
-	
+	     fun.staticwait(driver);
 		System.out.println("Application started");
-		
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
-		
 		fun.sendingData(driver, "xpath", property.getkeyvalue("userid"), property.getkeyvalue("username"));
 		fun.sendingData(driver, "xpath", property.getkeyvalue("passwordid"),property.getkeyvalue("password"));
-	    driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+	    fun.clickonButton(driver, "xpath", property.getkeyvalue("loginbtnid"));
 			
 			/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
 			 String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
