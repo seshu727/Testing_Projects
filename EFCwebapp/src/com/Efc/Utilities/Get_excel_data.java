@@ -9,11 +9,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 
-public class Excel {		
+public class Get_excel_data {		
 		 static Workbook wb;
 		 static FileOutputStream fo;
 		
-		public   Excel(String inputpath) throws Throwable{
+		public   Get_excel_data(String inputpath) throws Throwable{
 			FileInputStream fi =new FileInputStream(inputpath);
 			wb= WorkbookFactory.create(fi);
 		}

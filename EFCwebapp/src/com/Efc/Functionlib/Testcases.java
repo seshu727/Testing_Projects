@@ -12,34 +12,29 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Browser.Open_closebrowser;
-import com.Efc.Utilities.Excel;
-import com.Efc.Utilities.Propertiesdata;
+import com.Efc.Utilities.Get_excel_data;
+import com.Efc.Utilities.Get_property_data;
 
 public class Testcases extends Open_closebrowser {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
-	 static Propertiesdata p1;
+	 static Get_property_data p1;
 	 static commonfunlib co;
 	
 
 	@SuppressWarnings("static-access")
 	public static void Login() throws Throwable {
-	     new commonfunlib();
-		 p1 = new Propertiesdata();
-	     co.staticwait(driver);
+		co.implicitWait1(driver);
 		System.out.println("Application started");
 		
 		System.out.println("title of application is:"+driver.getTitle());
 		System.out.println("Url of App is:"+driver.getCurrentUrl());
 		System.out.println(p1.getkeyvalue("userid"));
-		co.staticwait(driver);
 		co.sendingData(driver, "xpath", p1.getkeyvalue("userid"), p1.getkeyvalue("username"));
-		co.staticwait(driver);
 		co.sendingData(driver, "xpath", p1.getkeyvalue("passwordid"),p1.getkeyvalue("password"));
-		co.staticwait(driver);
 	    co.clickonButton(driver, "xpath", p1.getkeyvalue("loginbtnid")); 
 			
-			/// String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
-			 String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
+			   //String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
+			    String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
 		        String expectedUrl= driver.getCurrentUrl();
 		        //Assert.assertEquals(actualUrl, expectedUrl);
 		        
@@ -677,7 +672,7 @@ public class Testcases extends Open_closebrowser {
 				//Monthly sales (daily estimation - current month)
 				 public static void sundaytomonday() throws Throwable {
 			
-					 Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
+					 Get_excel_data f = new Get_excel_data("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 					    String data=f.getCellData1("Sales", 0, 0);
 					    String data1=f.getCellData1("Sales", 0, 1);
 						//System.out.println(data);
@@ -701,7 +696,7 @@ public class Testcases extends Open_closebrowser {
 				      //Monthly sales records
 					 public static  void salesmonthlycode() throws Throwable {
 			
-							Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
+							Get_excel_data f = new Get_excel_data("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 						    String data=f.getCellData1("Sales", 0, 0);
 						    String data1=f.getCellData1("Sales", 0, 1);
 							//System.out.println(data);
@@ -870,7 +865,7 @@ public class Testcases extends Open_closebrowser {
 	     Thread.sleep(3000);
 		driver.findElement(By.xpath("//zc-table-field[1]/div[1]/div[1]/button[1]")).click();
 		
-		Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
+		Get_excel_data f = new Get_excel_data("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 	   
 	
 	int  rowcount1  =	f.rowCount("Sales");
@@ -942,7 +937,7 @@ public class Testcases extends Open_closebrowser {
 				
 			//	commonFields();
 				driver.findElement(By.xpath("//div[2]/ul[1]/li[2]/ul[1]/li[4]/div[1]/span[2]")).click();
-				Excel f = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
+				Get_excel_data f = new Get_excel_data("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 			    String a=f.getCellData1("Sales", 0, 4);
 			    String b=f.getCellData1("Sales", 1, 4);
 			    String c=f.getCellData1("Sales", 2, 4);
@@ -1082,7 +1077,7 @@ public class Testcases extends Open_closebrowser {
 				  
 				driver.findElement(By.xpath("//ul[1]/li[2]/ul[1]/li[5]/div[1]/span[2]")).click();
 				//Rightarrow();
-				Excel excel = new Excel("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
+				Get_excel_data excel = new Get_excel_data("C:\\Users\\PC\\Desktop\\appium1\\EFCwebapp\\Excelsheet\\EFC.xlsx");
 				
 				for(int i=0;i<excel.rowCount("Sales");i++) {
 				String op=	excel.getCellData1("Sales", i, 6);

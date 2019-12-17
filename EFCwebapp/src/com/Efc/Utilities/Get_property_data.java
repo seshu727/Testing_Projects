@@ -2,7 +2,7 @@ package com.Efc.Utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class Propertiesdata {
+public class Get_property_data {
 	
 		public static String getkeyvalue(String key) throws Throwable{
 			Properties po = new Properties();

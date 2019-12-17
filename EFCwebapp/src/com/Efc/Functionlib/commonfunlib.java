@@ -17,23 +17,23 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.Efc.Utilities.Propertiesdata;
+import com.Efc.Utilities.Get_property_data;
 
 public class commonfunlib  {
    protected static WebDriver driver;
 	static String value;
 	static ClipboardOwner owner = null;
-	static int sleeptime =3000;
+	static int sleeptime =2000;
 
 	public static WebDriver startBrowser() throws Throwable {
-		if (Propertiesdata.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
+		if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		}
-		else if (Propertiesdata.getkeyvalue("browser").equalsIgnoreCase("firefox")) {
+		else if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\PC\\git\\repository5\\DemoProject\\Driversdata\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-		else if (Propertiesdata.getkeyvalue("browser").equalsIgnoreCase("IE")) {
+		else if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("IE")) {
 			System.setProperty("webdriver.ie.driver", "C:\\Users\\PC\\git\\repository5\\DemoProject\\Driversdata\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
@@ -113,7 +113,7 @@ public class commonfunlib  {
 
 	public static void toastMessages() throws Throwable {
 
-		String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(Propertiesdata.getkeyvalue("toastid1")))).getText();
+		String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(Get_property_data.getkeyvalue("toastid1")))).getText();
 		String replacevalue=errormessage.replace("×", "");
 		//System.out.println(replacevalue.trim());
 		if(replacevalue.contains("Successfully")) {

@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Efc.Functionlib.Testrun">
+      <class name="com.Efc.Factory.Runtest">
         <methods>
-          <include name="loadbrowser"/>
           <include name="AppTesting"/>
+          <include name="loadbrowser"/>
         </methods>
-      </class> <!-- com.Efc.Functionlib.Testrun -->
+      </class> <!-- com.Efc.Factory.Runtest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

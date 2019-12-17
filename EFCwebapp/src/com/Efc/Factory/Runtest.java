@@ -4,13 +4,14 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Efc.Functionlib.Testcases;
-import com.Efc.Utilities.Listeners1;
-@Listeners(Listeners1.class)
-public class Testrun extends Testcases {
+import com.Efc.Utilities.Listerners_Test;
+@Listeners(Listerners_Test.class)
+public class Runtest extends Testcases {
 	@Test
 	public static void AppTesting() throws Throwable {
 		Login();
-		navigatesToclientcreation();
+		//navigatesToclientcreation();
+		//navigatesTonewAppraisal();
 		clientCreation();
 		//womenLoan();
 		//smeLoan();

@@ -9,9 +9,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import com.Efc.Browser.Open_closebrowser;
-import com.Efc.Factory.Testrun;
+import com.Efc.Factory.Runtest;
 
-public class Screens  extends Testrun{
+public class Get_screenshots  extends Runtest{
 
 	
 	
