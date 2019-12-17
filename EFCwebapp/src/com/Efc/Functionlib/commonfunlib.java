@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Efc.Utilities.Propertiesdata;
 
 public class commonfunlib  {
-   static WebDriver driver;
+   protected static WebDriver driver;
 	static String value;
 	static ClipboardOwner owner = null;
 	static int sleeptime =3000;
@@ -43,16 +43,16 @@ public class commonfunlib  {
 		return driver;
 	}
 
-	public static void urlHitting(String url) throws Throwable {
+    	public static void urlHitting(String url) throws Throwable {
 
 		driver.get(url);
 		driver.manage().window().maximize();
 
-	}
-public static void fileUpload() throws Throwable {
+	   }
+         public static void fileUpload() throws Throwable {
 		
 		
-		StringSelection s = new StringSelection("C:\\Users\\PC\\Pictures\\Screenshots\\Screenshot (1).png");
+		 StringSelection s = new StringSelection("C:\\Users\\PC\\Pictures\\Screenshots\\Screenshot (1).png");
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, owner);
 		 Robot r = new Robot();
 		 r.setAutoDelay(1000);
@@ -71,29 +71,29 @@ public static void fileUpload() throws Throwable {
 		 }
 	}
 
-	public static void clearingData(WebDriver driver, String locatortype, String locatorvalue) {
-		if (locatortype.equalsIgnoreCase("id")) {
+	             public static void clearingData(WebDriver driver, String locatortype, String locatorvalue) {
+	    	if (locatortype.equalsIgnoreCase("id")) {
 			driver.findElement(By.id(locatorvalue)).clear();
-		}
+	     	}
 		
-	}
-	public static void staticwait(WebDriver driver) throws InterruptedException {
+	        }
+      	public static void staticwait(WebDriver driver) throws InterruptedException {
 		Thread.sleep(sleeptime);
 
-	}
-	public static String textofElement(WebDriver driver, String locatortype, String locatorvalue) {
+	    }
+	      public static String textofElement(WebDriver driver, String locatortype, String locatorvalue) {
       
 		if (locatortype.equalsIgnoreCase("id")) {
 
-	String data1=	driver.findElement(By.id(locatorvalue)).getText();
-	System.out.println(data1);
+	     String data1=	driver.findElement(By.id(locatorvalue)).getText();
+	     System.out.println(data1);
 		
 	}
 
 		else if (locatortype.equalsIgnoreCase("xpath")) {
 
-	String data1=	driver.findElement(By.id(locatorvalue)).getText();
-	System.out.println(data1);
+	      String data1=	driver.findElement(By.id(locatorvalue)).getText();
+	    System.out.println(data1);
 		
 	}
 		return locatorvalue;
@@ -107,7 +107,7 @@ public static void fileUpload() throws Throwable {
 		else if (locatortype.equalsIgnoreCase("xpath")) {
 		
 
-			driver.findElement(By.id(locatorvalue)).click();
+			driver.findElement(By.xpath(locatorvalue)).click();
 		}
 	}
 
@@ -134,9 +134,9 @@ public static void fileUpload() throws Throwable {
 			driver.findElement(By.id(locatorvalue)).sendKeys(data);
 		}
 		else if (locatortype.equalsIgnoreCase("xpath")) {
-			driver.findElement(By.id(locatorvalue)).clear();
+			driver.findElement(By.xpath(locatorvalue)).clear();
 
-			driver.findElement(By.id(locatorvalue)).sendKeys(data);
+			driver.findElement(By.xpath(locatorvalue)).sendKeys(data);
 		}
 
 		return data;

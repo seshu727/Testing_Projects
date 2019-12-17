@@ -1,5 +1,4 @@
 package com.Efc.Utilities;
-
 import java.io.FileInputStream;
 import java.util.Properties;
 

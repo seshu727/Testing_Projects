@@ -2,38 +2,38 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20721" started-at="2019-12-17T09:47:24 IST" finished-at="2019-12-17T09:47:45 IST">
+  <suite name="Default suite" duration-ms="41018" started-at="2019-12-17T11:16:39 IST" finished-at="2019-12-17T11:17:20 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20721" started-at="2019-12-17T09:47:24 IST" finished-at="2019-12-17T09:47:45 IST">
-      <class name="com.Efc.Driverfactory.Testrun">
-        <test-method status="PASS" signature="loadbrowser()[pri:0, instance:com.Efc.Driverfactory.Testrun@18eed359]" name="loadbrowser" is-config="true" duration-ms="14511" started-at="2019-12-17T09:47:24 IST" finished-at="2019-12-17T09:47:38 IST">
+    <test name="Default test" duration-ms="41018" started-at="2019-12-17T11:16:39 IST" finished-at="2019-12-17T11:17:20 IST">
+      <class name="com.Efc.Functionlib.Testrun">
+        <test-method status="PASS" signature="loadbrowser()[pri:0, instance:com.Efc.Functionlib.Testrun@18eed359]" name="loadbrowser" is-config="true" duration-ms="17379" started-at="2019-12-17T11:16:39 IST" finished-at="2019-12-17T11:16:56 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadbrowser -->
-        <test-method status="FAIL" signature="AppTesting()[pri:0, instance:com.Efc.Driverfactory.Testrun@18eed359]" name="AppTesting" duration-ms="6132" started-at="2019-12-17T09:47:39 IST" finished-at="2019-12-17T09:47:45 IST">
+        <test-method status="FAIL" signature="AppTesting()[pri:0, instance:com.Efc.Functionlib.Testrun@18eed359]" name="AppTesting" duration-ms="23575" started-at="2019-12-17T11:16:56 IST" finished-at="2019-12-17T11:17:20 IST">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#\/\/input\[\@type\=\'text\'\]"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Add Client']"}
   (Session info: chrome=79.0.3945.79)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'DESKTOP-JIPFL18', ip: '192.168.0.94', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:50253}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 28f459b196f3f1f1ca4006506c50b415
-*** Element info: {Using=id, value=//input[@type='text']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:51301}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 49e20841ea4d406d9fd8ee26f8571dec
+*** Element info: {Using=xpath, value=//button[text()='Add Client']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#\/\/input\[\@type\=\'text\'\]"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Add Client']"}
   (Session info: chrome=79.0.3945.79)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'DESKTOP-JIPFL18', ip: '192.168.0.94', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:50253}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 28f459b196f3f1f1ca4006506c50b415
-*** Element info: {Using=id, value=//input[@type='text']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:51301}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 49e20841ea4d406d9fd8ee26f8571dec
+*** Element info: {Using=xpath, value=//button[text()='Add Client']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -45,12 +45,12 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.Efc.Functionlib.commonfunlib.sendingData(commonfunlib.java:137)
-at com.Efc.Functionlib.Testcases.Login(Testcases.java:35)
-at com.Efc.Driverfactory.Testrun.AppTesting(Testrun.java:10)
+at com.Efc.Functionlib.commonfunlib.clickonButton(commonfunlib.java:110)
+at com.Efc.Functionlib.Testcases.navigatesToclientcreation(Testcases.java:60)
+at com.Efc.Functionlib.Testrun.AppTesting(Testrun.java:12)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -86,7 +86,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AppTesting -->
-      </class> <!-- com.Efc.Driverfactory.Testrun -->
+      </class> <!-- com.Efc.Functionlib.Testrun -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

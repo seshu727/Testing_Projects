@@ -8,7 +8,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.Efc.Functionlib.Testrun;
+import com.Efc.Browser.Open_closebrowser;
+import com.Efc.Factory.Testrun;
 
 public class Screens  extends Testrun{
 
