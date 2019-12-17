@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Utilities.Excel;
 import com.Efc.Utilities.Propertiesdata;
-import com.Efc.constant.Open_closebrowser;
 
 public class Testcases extends Open_closebrowser {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
