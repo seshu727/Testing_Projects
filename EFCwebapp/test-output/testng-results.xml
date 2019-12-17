@@ -2,34 +2,38 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62224" started-at="2019-12-17T11:54:39 IST" finished-at="2019-12-17T11:55:41 IST">
+  <suite name="Default suite" duration-ms="72580" started-at="2019-12-17T14:47:15 IST" finished-at="2019-12-17T14:48:28 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="62224" started-at="2019-12-17T11:54:39 IST" finished-at="2019-12-17T11:55:41 IST">
+    <test name="Default test" duration-ms="72580" started-at="2019-12-17T14:47:15 IST" finished-at="2019-12-17T14:48:28 IST">
       <class name="com.Efc.Factory.Runtest">
-        <test-method status="PASS" signature="loadbrowser()[pri:0, instance:com.Efc.Factory.Runtest@18eed359]" name="loadbrowser" is-config="true" duration-ms="34029" started-at="2019-12-17T11:54:39 IST" finished-at="2019-12-17T11:55:13 IST">
+        <test-method status="PASS" signature="loadbrowser()[pri:0, instance:com.Efc.Factory.Runtest@18eed359]" name="loadbrowser" is-config="true" duration-ms="61914" started-at="2019-12-17T14:47:15 IST" finished-at="2019-12-17T14:48:17 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadbrowser -->
-        <test-method status="FAIL" signature="AppTesting()[pri:0, instance:com.Efc.Factory.Runtest@18eed359]" name="AppTesting" duration-ms="14071" started-at="2019-12-17T11:55:13 IST" finished-at="2019-12-17T11:55:27 IST">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="FAIL" signature="AppTesting()[pri:0, instance:com.Efc.Factory.Runtest@18eed359]" name="AppTesting" duration-ms="10155" started-at="2019-12-17T14:48:17 IST" finished-at="2019-12-17T14:48:27 IST">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[chrome not reachable
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@type='text']"}
   (Session info: chrome=79.0.3945.79)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'DESKTOP-JIPFL18', ip: '192.168.0.94', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:52732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0d37768a2cedf7cb56d1d1565640a1ca]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:57300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a763952361843d5f86bb44160727276c
+*** Element info: {Using=xpath, value=//input[@type='text']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@type='text']"}
   (Session info: chrome=79.0.3945.79)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'DESKTOP-JIPFL18', ip: '192.168.0.94', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:52732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0d37768a2cedf7cb56d1d1565640a1ca
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\PC\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:57300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a763952361843d5f86bb44160727276c
+*** Element info: {Using=xpath, value=//input[@type='text']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -40,9 +44,12 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:281)
-at com.Efc.Functionlib.Testcases.Login(Testcases.java:29)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.Efc.Functionlib.common_fun_lib.sendingData(common_fun_lib.java:136)
+at com.Efc.Functionlib.Testcases.Login(Testcases.java:32)
 at com.Efc.Factory.Runtest.AppTesting(Runtest.java:12)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -75,7 +82,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AppTesting -->

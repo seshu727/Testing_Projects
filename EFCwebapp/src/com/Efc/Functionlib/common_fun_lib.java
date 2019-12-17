@@ -13,17 +13,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Efc.Utilities.Get_property_data;
 
-public class commonfunlib  {
+public class common_fun_lib  {
    protected static WebDriver driver;
 	static String value;
 	static ClipboardOwner owner = null;
-	static int sleeptime =2000;
+	static int sleeptime =3000;
 
 	public static WebDriver startBrowser() throws Throwable {
 		if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
@@ -138,7 +137,11 @@ public class commonfunlib  {
 
 			driver.findElement(By.xpath(locatorvalue)).sendKeys(data);
 		}
+		else if (locatortype.equalsIgnoreCase("css")) {
+			driver.findElement(By.cssSelector(locatorvalue)).clear();
 
+			driver.findElement(By.cssSelector(locatorvalue)).sendKeys(data);
+		}
 		return data;
 	}
 
@@ -212,18 +215,7 @@ public class commonfunlib  {
 
 	}
 
-	public static void mouseOvers() {
-
-		Actions act = new Actions(driver);
-		act.moveToElement(
-				driver.findElement(By.xpath("//li[@id='mi_a_stock_items']//a[contains(text(),'Stock Items')]")));
-		act.build().perform();
-
-		act.moveToElement(driver
-				.findElement(By.xpath("//li[@id='mi_a_stock_categories']//a[contains(text(),'Stock Categories')]")))
-				.click().build().perform();
-
-	}
+	
 
 
 }

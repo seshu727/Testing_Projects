@@ -10,7 +10,7 @@ public class Runtest extends Testcases {
 	@Test
 	public static void AppTesting() throws Throwable {
 		Login();
-		//navigatesToclientcreation();
+		navigatesToclientcreation();
 		//navigatesTonewAppraisal();
 		clientCreation();
 		//womenLoan();

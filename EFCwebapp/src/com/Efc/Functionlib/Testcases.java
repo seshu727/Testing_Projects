@@ -18,7 +18,7 @@ import com.Efc.Utilities.Get_property_data;
 public class Testcases extends Open_closebrowser {
 	 static JavascriptExecutor js = (JavascriptExecutor) driver;
 	 static Get_property_data p1;
-	 static commonfunlib co;
+	 static common_fun_lib co;
 	
 
 	@SuppressWarnings("static-access")
@@ -48,16 +48,22 @@ public class Testcases extends Open_closebrowser {
 	  
 	}
 		        
-	@SuppressWarnings("static-access")
-	public static void navigatesToclientcreation() throws Throwable {
+	public static void keyActions() {
+		Actions act = new Actions(driver);
+        act.sendKeys(Keys.ARROW_DOWN);
+        act.sendKeys(Keys.ENTER);
+        act.build().perform();
+	}
+	   @SuppressWarnings("static-access")
+	   public static void navigatesToclientcreation() throws Throwable {
         co.staticwait(driver);
 		co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
 		co.clickonButton(driver, "xpath", (p1.getkeyvalue("clientid")));
 		co.clickonButton(driver, "xpath", (p1.getkeyvalue("Addclientbtnid")));	
 	}
 	
-	@SuppressWarnings("static-access")
-	public static void navigatesTonewAppraisal() throws Throwable {
+     	@SuppressWarnings("static-access")
+     	public static void navigatesTonewAppraisal() throws Throwable {
 		
 		co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
 		co.clickonButton(driver, "xpath", (p1.getkeyvalue("appraisalid")));
@@ -66,19 +72,19 @@ public class Testcases extends Open_closebrowser {
 			 
 			 @SuppressWarnings("static-access")
 			 public static void clientCreation() throws Throwable {
+				 co.implicitWait1(driver);
 		        	System.out.println("Client creation started");
-					 co.sendingData(driver, "id", p1.getkeyvalue("clientnameid"),p1.getkeyvalue("clientnamevalue"));
-					 co.sendingData(driver, "id", p1.getkeyvalue("clientnumberid"),p1.getkeyvalue("clientnumbervalue"));
-					co.clickonButton(driver, "id", p1.getkeyvalue("repeatid"));
-					co.clickonButton(driver, "xpath", p1.getkeyvalue("clientType"));
-					WebElement wb =  driver.findElement(By.xpath(p1.getkeyvalue("clientType")));
-					Select sec = new Select(wb);
-					sec.selectByIndex(1);
-					
-				    driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/label[1]")).click();
-					// Select s =  new Select(driver.findElement(By.cssSelector("body.sidebar.sidebar-icons:nth-child(2) div.main-content div.p-contain zc-block-tree-node.block div.ng-star-inserted div.row.no-gutters.ng-star-inserted div.col div.zc-widget-form.zc-panel.zc-contact-form form.ng-invalid.ng-star-inserted.ng-dirty.ng-touched formly-form.row formly-field.col-md-6.col-sm-12.ng-star-inserted:nth-child(5) zc-wrapper-label.ng-star-inserted zc-wrapper-fieldset.ng-star-inserted div.form-group zc-wrapper-validation-messages.ng-star-inserted zc-field-select.ng-star-inserted div.ng-star-inserted p-dropdown.ng-tns-c10-0.ng-untouched.ng-pristine.ng-valid.ng-star-inserted div.ng-tns-c10-0.ui-dropdown.ui-widget.ui-state-default.ui-corner-all.ui-helper-clearfix.ui-dropdown-clearable > div.ui-dropdown-trigger.ui-state-default.ui-corner-right:nth-child(4)")));
-					 Thread.sleep(2000);
-				    //	s.selectByIndex(1);
+					co.sendingData(driver, "id", p1.getkeyvalue("clientnameid"),p1.getkeyvalue("clientnamevalue"));
+					co.sendingData(driver, "id", p1.getkeyvalue("clientnumberid"),p1.getkeyvalue("clientnumbervalue"));
+					co.clickonButton(driver, "xpath", p1.getkeyvalue("repeatid"));
+					co.clickonButton(driver, "id", p1.getkeyvalue("clientTypeid"));
+					co.staticwait(driver);
+                    keyActions();
+                    co.staticwait(driver);
+				    co.clickonButton(driver, "id", p1.getkeyvalue("typeofid"));
+				    co.staticwait(driver);
+				    keyActions();
+				    System.out.println("done");
 					 driver.findElement(By.xpath("//span[contains(text(),'Company')]")).click();
 					 Thread.sleep(2000);
 					 
