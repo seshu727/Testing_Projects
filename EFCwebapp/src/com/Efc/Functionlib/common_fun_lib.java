@@ -19,38 +19,44 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Efc.Utilities.Get_property_data;
 
 public class common_fun_lib  {
-   protected static WebDriver driver;
+	protected static WebDriver driver;
 	static String value;
-	static ClipboardOwner owner = null;
-	static int sleeptime =3000;
-
+	static ClipboardOwner owner =null;
+	static int sleeptime = 2000;
+	static Get_property_data po;
+    
+	@SuppressWarnings("static-access")
 	public static WebDriver startBrowser() throws Throwable {
-		if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
+		if (po.getkeyvalue("browser").equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
-		}
-		else if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Users\\PC\\git\\repository5\\DemoProject\\Driversdata\\geckodriver.exe");
+		} else if (po.getkeyvalue("browser").equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver",
+					"C:\\Users\\PC\\git\\repository5\\DemoProject\\Driversdata\\geckodriver.exe");
 			driver = new FirefoxDriver();
-		}
-		else if (Get_property_data.getkeyvalue("browser").equalsIgnoreCase("IE")) {
-			System.setProperty("webdriver.ie.driver", "C:\\Users\\PC\\git\\repository5\\DemoProject\\Driversdata\\IEDriverServer.exe");
+		} else if (po.getkeyvalue("browser").equalsIgnoreCase("IE")) {
+			System.setProperty("webdriver.ie.driver",
+					"C:\\Users\\PC\\git\\repository5\\DemoProject\\Driversdata\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
-		}
-		else {
+		} else {
 			System.out.println("Failed to start browser");
 		}
 		return driver;
 	}
+	public static void submitbtn() {
+		driver.findElement(By.xpath("//button[text()='Submit']")).click();
+	}
 
+	
     	public static void urlHitting(String url) throws Throwable {
-
 		driver.get(url);
 		driver.manage().window().maximize();
-
 	   }
+    	
+    	
+    	
+    	
+    	
          public static void fileUpload() throws Throwable {
-		
-		
 		 StringSelection s = new StringSelection("C:\\Users\\PC\\Pictures\\Screenshots\\Screenshot (1).png");
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, owner);
 		 Robot r = new Robot();
@@ -61,58 +67,60 @@ public class common_fun_lib  {
 		 r.keyRelease(KeyEvent.VK_V);
 		 r.keyPress(KeyEvent.VK_ENTER);
 		 r.keyRelease(KeyEvent.VK_ENTER);
-		 //Thread.sleep(10000);  
-		 if(driver.findElement(By.xpath("//zc-wrapper-validation-messages[1]/zc-file[1]/div[2]/ul[1]/li[1]/span[1]")).isDisplayed()) {
-			 System.out.println("File uploaded success");
-		 }else {
-			 
-			 System.out.println("File upload failed");
-		 }
-	}
-
-	             public static void clearingData(WebDriver driver, String locatortype, String locatorvalue) {
+		 staticwait(driver);
+		 toastMessages();
+         }
+	   public static void clearingData(WebDriver driver, String locatortype, String locatorvalue) {
 	    	if (locatortype.equalsIgnoreCase("id")) {
 			driver.findElement(By.id(locatorvalue)).clear();
-	     	}
-		
-	        }
+	     	} }
+	   
+	   
       	public static void staticwait(WebDriver driver) throws InterruptedException {
 		Thread.sleep(sleeptime);
-
-	    }
+		}
+      	
+      	
 	      public static String textofElement(WebDriver driver, String locatortype, String locatorvalue) {
       
 		if (locatortype.equalsIgnoreCase("id")) {
 
 	     String data1=	driver.findElement(By.id(locatorvalue)).getText();
 	     System.out.println(data1);
-		
-	}
+	     }
 
 		else if (locatortype.equalsIgnoreCase("xpath")) {
 
 	      String data1=	driver.findElement(By.id(locatorvalue)).getText();
-	    System.out.println(data1);
-		
-	}
+	      System.out.println(data1);
+	      }
 		return locatorvalue;
-	}
-	public static void clickonButton(WebDriver driver, String locatortype, String locatorvalue) throws Throwable {
+	      }
+	      
+	      
+     	public static void clickonButton(WebDriver driver, String locatortype, String locatorvalue) throws Throwable {
 
-		if (locatortype.equalsIgnoreCase("id")) {
+		   if (locatortype.equalsIgnoreCase("id")) {
 
 			driver.findElement(By.id(locatorvalue)).click();
-		}
-		else if (locatortype.equalsIgnoreCase("xpath")) {
+		    }
+		   else if (locatortype.equalsIgnoreCase("xpath")) {
 		
-
 			driver.findElement(By.xpath(locatorvalue)).click();
-		}
-	}
+		    }
+		   else if (locatortype.equalsIgnoreCase("LinkText")) {
+				
+				driver.findElement(By.linkText(locatorvalue)).click();
+			    }
+		   else if (locatortype.equalsIgnoreCase("css")) {
+				
+				driver.findElement(By.cssSelector(locatorvalue)).click();
+			    }
+	        }
 
-	public static void toastMessages() throws Throwable {
+	   public static void toastMessages() throws Throwable {
 
-		String errormessage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id(Get_property_data.getkeyvalue("toastid1")))).getText();
+		String errormessage = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.id(Get_property_data.getkeyvalue("toastid1")))).getText();
 		String replacevalue=errormessage.replace("×", "");
 		//System.out.println(replacevalue.trim());
 		if(replacevalue.contains("Successfully")) {
@@ -122,7 +130,7 @@ public class common_fun_lib  {
 			System.out.println("Toast Message "+replacevalue.trim());
 			System.out.println("Data Adding Unsuccessful");
 		}
-	}
+	  }
 
 	public static String sendingData(WebDriver driver, String locatortype, String locatorvalue, String data)
 			throws Throwable {
@@ -137,7 +145,13 @@ public class common_fun_lib  {
 
 			driver.findElement(By.xpath(locatorvalue)).sendKeys(data);
 		}
-		else if (locatortype.equalsIgnoreCase("css")) {
+		
+		else if (locatortype.equalsIgnoreCase("className")) {
+			driver.findElement(By.cssSelector(locatorvalue)).clear();
+
+			driver.findElement(By.cssSelector(locatorvalue)).sendKeys(data);
+		}
+		else if (locatortype.equalsIgnoreCase("linktext")) {
 			driver.findElement(By.cssSelector(locatorvalue)).clear();
 
 			driver.findElement(By.cssSelector(locatorvalue)).sendKeys(data);
@@ -170,19 +184,6 @@ public class common_fun_lib  {
 
 		driver.close();
 	}
-	
-	
-
-	public static void submitButton(WebDriver driver, String locatortype, String locatorvalue) {
-
-		if (locatortype.equalsIgnoreCase("xpath")) {
-			driver.findElement(By.xpath(locatorvalue)).submit();
-		} else if (locatortype.equalsIgnoreCase("id")) {
-			driver.findElement(By.id(locatorvalue)).submit();
-		} else if (locatortype.equalsIgnoreCase("name")) {
-			driver.findElement(By.name(locatorvalue)).submit();
-		}
-	}
 
 	public static void alertsHandle() {
 		String al = driver.switchTo().alert().getText();
@@ -210,12 +211,9 @@ public class common_fun_lib  {
 			message = driver.findElement(By.xpath(locatorvalue)).getAttribute("value");
 		} else if (loctortype.equalsIgnoreCase("name")) {
 			message = driver.findElement(By.name(locatorvalue)).getAttribute("value");
-
-		}
-
-	}
-
+	}}
+}
 	
 
 
-}
+

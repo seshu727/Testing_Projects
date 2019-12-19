@@ -10,138 +10,128 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 import com.Efc.Browser.Open_closebrowser;
 import com.Efc.Utilities.Get_excel_data;
 import com.Efc.Utilities.Get_property_data;
-
+import com.Efc.Utilities.Listerners_Test;
+@Listeners(Listerners_Test.class)
 public class Testcases extends Open_closebrowser {
-	 static JavascriptExecutor js = (JavascriptExecutor) driver;
 	 static Get_property_data p1;
 	 static common_fun_lib co;
 	
 
 	@SuppressWarnings("static-access")
+	@Test(priority = 0)
 	public static void Login() throws Throwable {
 		co.implicitWait1(driver);
 		System.out.println("Application started");
-		
-		System.out.println("title of application is:"+driver.getTitle());
-		System.out.println("Url of App is:"+driver.getCurrentUrl());
-		System.out.println(p1.getkeyvalue("userid"));
 		co.sendingData(driver, "xpath", p1.getkeyvalue("userid"), p1.getkeyvalue("username"));
 		co.sendingData(driver, "xpath", p1.getkeyvalue("passwordid"),p1.getkeyvalue("password"));
 	    co.clickonButton(driver, "xpath", p1.getkeyvalue("loginbtnid")); 
-			
-			   //String loginStatus = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("toast-container"))).getText();
 			    String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
+			    co.staticwait(driver);
 		        String expectedUrl= driver.getCurrentUrl();
-		        //Assert.assertEquals(actualUrl, expectedUrl);
-		        
+		        System.out.println(expectedUrl); 
 		     if(actualUrl.equalsIgnoreCase(expectedUrl)) {
 		    	 System.out.println("Test Passed");
-		    	 co.staticwait(driver);
-		     }else {
-		    	 //toastMessages1();
-		    	 System.out.println("Test Failed");
 		     }
-	  
-	}
-		        
-	public static void keyActions() {
-		Actions act = new Actions(driver);
-        act.sendKeys(Keys.ARROW_DOWN);
-        act.sendKeys(Keys.ENTER);
-        act.build().perform();
-	}
-	   @SuppressWarnings("static-access")
-	   public static void navigatesToclientcreation() throws Throwable {
-        co.staticwait(driver);
-		co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
-		co.clickonButton(driver, "xpath", (p1.getkeyvalue("clientid")));
-		co.clickonButton(driver, "xpath", (p1.getkeyvalue("Addclientbtnid")));	
-	}
-	
-     	@SuppressWarnings("static-access")
-     	public static void navigatesTonewAppraisal() throws Throwable {
-		
-		co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
-		co.clickonButton(driver, "xpath", (p1.getkeyvalue("appraisalid")));
-		co.clickonButton(driver, "xpath", (p1.getkeyvalue("Appraisalbtnid")));	
-	}
-			 
+		     else {
+		    	 co.toastMessages();
+		    	 System.out.println("Test Failed");
+		     }}
+		       
 			 @SuppressWarnings("static-access")
+			 @Test(priority = 1)
 			 public static void clientCreation() throws Throwable {
-				 co.implicitWait1(driver);
-		        	System.out.println("Client creation started");
-					co.sendingData(driver, "id", p1.getkeyvalue("clientnameid"),p1.getkeyvalue("clientnamevalue"));
-					co.sendingData(driver, "id", p1.getkeyvalue("clientnumberid"),p1.getkeyvalue("clientnumbervalue"));
-					co.clickonButton(driver, "xpath", p1.getkeyvalue("repeatid"));
-					co.clickonButton(driver, "id", p1.getkeyvalue("clientTypeid"));
-					co.staticwait(driver);
-                    keyActions();
-                    co.staticwait(driver);
-				    co.clickonButton(driver, "id", p1.getkeyvalue("typeofid"));
-				    co.staticwait(driver);
-				    keyActions();
-				    System.out.println("done");
-					 driver.findElement(By.xpath("//span[contains(text(),'Company')]")).click();
-					 Thread.sleep(2000);
-					 
-					 driver.findElement(By.xpath("//formly-form[1]/formly-field[6]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/label[1]")).click();
-					 Thread.sleep(2000);
-					 driver.findElement(By.xpath("//li[1]/span[1]")).click();
-					 Thread.sleep(2000);
-						
-					 driver.findElement(By.xpath("//form[1]/formly-form[1]/formly-field[7]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-input[1]/div[1]/input[1]")).sendKeys("12312312312312");
-					 Thread.sleep(2000);
-					 driver.findElement(By.xpath("//div[@class='custom-file ng-star-inserted']")).click();
-					 Thread.sleep(1000);
-					 //uploading file
-					 co.fileUpload();
-		
-					driver.findElement(By.xpath("//formly-field[15]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-input[1]/div[1]/input[1]")).sendKeys("online");
-					Thread.sleep(2000);
-					
-					//male
-					//driver.findElement(By.xpath("//div[1]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[16]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-radio[1]/div[1]/div[1]/label[1]")).click();
-					Thread.sleep(3000);
-					//female
-					driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-page-layout[1]/div[2]/div[3]/div[1]/app-page[1]/div[1]/zc-page-render[1]/zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[16]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-radio[1]/div[1]/div[2]/label[1]")).click();
-					driver.findElement(By.xpath("//formly-form[1]/formly-field[17]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-radio[1]/div[1]/div[1]/label[1]")).click();
-					Thread.sleep(1000);
-					driver.findElement(By.xpath("//formly-form[1]/formly-field[18]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-formly-field-date[1]/p-calendar[1]/span[1]/input[1]")).sendKeys("12/11/1993");
-					driver.findElement(By.linkText("12")).click();
-					driver.findElement(By.cssSelector("#place_of_birth")).sendKeys("hyd");
-					driver.findElement(By.cssSelector("#client_address")).sendKeys("hyd");//zc-block-tree-node[1]/zc-block-tree-node[1]/app-com-render[1]/div[1]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[16]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-radio[1]/div[1]/div[2]/label[1]
-					driver.findElement(By.cssSelector("#email")).sendKeys("sess@gmail.com");
-					driver.findElement(By.cssSelector("#phone_num")).sendKeys("423432439");
-					driver.findElement(By.cssSelector("#alternative_phone")).sendKeys("423432432");
-					driver.findElement(By.xpath("//formly-form[1]/div[1]/button[1]")).click();
-					//Thread.sleep(10000);
-					
 				
-					
-				WebElement table=driver.findElement(By.xpath("//div[1]/zc-widget-data-list[1]/div[1]/p-table[1]/div[1]/div[2]/table[1]"));
-				List<WebElement>rows=table.findElements(By.tagName("tr"));
-				System.out.println("no of rows are::"+rows.size());
-				List<WebElement>cols=rows.get(1).findElements(By.tagName("td"));
-				System.out.println("no of columns are::"+cols.size());
-				String dataoftable =cols.get(0).getText();
-				System.out.println(dataoftable);
-					
-			    	   if(dataoftable.equalsIgnoreCase("mizba")) {
-			    		   System.out.println("Client creation success");
-			    		   System.out.println("Test passed:::::::::::");
-			    		   
-			    		   
-			    	   }else {
-			    		   System.out.println("Client creation failed");
-			    		   System.out.println("Test failed");
-			    		   
-			    	   }
+					 navigatesToclientcreation();
+		/*
+		 * co.implicitWait1(driver); System.out.println("Client creation started");
+		 * co.sendingData(driver, "id",
+		 * p1.getkeyvalue("clientnameid"),p1.getkeyvalue("clientnamevalue"));
+		 * co.sendingData(driver, "id",
+		 * p1.getkeyvalue("clientnumberid"),p1.getkeyvalue("clientnumbervalue"));
+		 * co.clickonButton(driver, "xpath", p1.getkeyvalue("repeatid"));
+		 * co.clickonButton(driver, "id", p1.getkeyvalue("clientTypeid")); keyActions();
+		 * co.clickonButton(driver, "id", p1.getkeyvalue("typeofid")); keyActions();
+		 * co.sendingData(driver, "id", p1.getkeyvalue("numberid"),
+		 * p1.getkeyvalue("numbervalue")); //co.clickonButton(driver, "xpath",
+		 * p1.getkeyvalue("documentid")); //System.out.println("note1"); //uploading
+		 * file //co.fileUpload(); co.sendingData(driver, "id",
+		 * p1.getkeyvalue("efchearid"), p1.getkeyvalue("efchearvalue"));
+		 * scrollpagedown(); //male co.clickonButton(driver,
+		 * "xpath",p1.getkeyvalue("gendermaleid")); //female //co.clickonButton(driver,
+		 * "xpath",p1.getkeyvalue("genderfemaleid")); co.clickonButton(driver,"xpath",
+		 * p1.getkeyvalue("maritalstatusid")); co.sendingData(driver, "xpath",
+		 * p1.getkeyvalue("dobid"),p1.getkeyvalue("dobvalue")); co.clickonButton(driver,
+		 * "LinkText", p1.getkeyvalue("dobdateid")); co.sendingData(driver, "id",
+		 * p1.getkeyvalue("placeofbirthid"), p1.getkeyvalue("placeofbirthvalue"));
+		 * co.sendingData(driver, "id", p1.getkeyvalue("clientaddressid"),
+		 * p1.getkeyvalue("clientaddressvalue")); co.sendingData(driver, "id",
+		 * p1.getkeyvalue("emailid"), p1.getkeyvalue("emailvalue"));
+		 * co.sendingData(driver, "id", p1.getkeyvalue("phoneid1"),
+		 * p1.getkeyvalue("phoneidvalue1")); co.sendingData(driver, "id",
+		 * p1.getkeyvalue("phoneid2"), p1.getkeyvalue("phoneidvalue2"));
+		 * co.clickonButton(driver, "css", p1.getkeyvalue("submitbtnid"));
+		 */
+					List<WebElement> rows = driver.findElements(By.tagName("tr"));
+				    System.out.println(rows.size());
+				    for(int i=1;i<rows.size();i++){
+				    	 String row=rows.get(i).getText();
+				    	 System.out.println(row);
+				    	 List<WebElement> col = driver.findElements(By.tagName("td"));
+				      	 //System.out.println(col.size());
+				      	
+				    	 for(int j=1;j<col.size();j++){
+				    		 String cols =col.get(j).getText();
+				 	    	System.out.println(cols);
+				    	 
+						
+				    	   if(cols.equalsIgnoreCase(p1.getkeyvalue("nameinifcondition"))) {
+				    		   System.out.println(p1.getkeyvalue("nameinifcondi tion"));
+				    		   System.out.println("Client creation success");
+				    		   System.out.println("Test passed:::::::::::");
+				    		   
+				    		   
+				    	   }else {
+				    		   System.out.println("Client creation failed");
+				    		   System.out.println("Test failed");
+				    	   }
 			 }
-			    	
+		     }
+			 }
+			 
+			    @SuppressWarnings("static-access")
+		     	public static void navigatesTonewAppraisal() throws Throwable {
+				
+				co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
+				co.clickonButton(driver, "xpath", (p1.getkeyvalue("appraisalid")));
+				co.clickonButton(driver, "xpath", (p1.getkeyvalue("Appraisalbtnid")));	
+			}
+			 
+			 public static void keyActions() {
+					Actions act = new Actions(driver);
+			        act.sendKeys(Keys.ARROW_DOWN);
+			        act.sendKeys(Keys.ENTER);
+			        act.build().perform();
+				}
+				public static void scrollpagedown() {
+					JavascriptExecutor jse1 = (JavascriptExecutor) driver;
+					jse1.executeScript("window.scrollBy(300,600)");
+				}
+				
+				   @SuppressWarnings("static-access")
+				   public static void navigatesToclientcreation() throws Throwable {
+			        //this method is to click on element
+					co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
+					co.clickonButton(driver, "xpath", (p1.getkeyvalue("clientid")));
+					//co.clickonButton(driver, "xpath", (p1.getkeyvalue("Addclientbtnid")));	
+				}
+				
+					 	
 			 public static void  womenLoan() throws Throwable {
 			
 				 System.out.println("New appraisal creation started");
