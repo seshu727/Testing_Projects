@@ -174,7 +174,7 @@ public class Testcases extends Open_closebrowser {
 				Thread.sleep(3000);
 				//System.out.println("selected client name");
 				
-			    driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
+			        driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
 			
 
 				Thread.sleep(1000);
@@ -182,7 +182,7 @@ public class Testcases extends Open_closebrowser {
 				Thread.sleep(3000);
 				a.sendKeys(Keys.ENTER);
 				a.build().perform();
-			    Thread.sleep(2000);
+			        Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id=\"business_information@no_of_yrs_in_bus\"]")).sendKeys("8");		
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//div[1]/form[1]/formly-form[1]/div[1]/button[2]")).click();
@@ -190,11 +190,11 @@ public class Testcases extends Open_closebrowser {
 			    	    }
 			    	
 	
-			 public static void smeLoan() throws Throwable {
+			        public static void smeLoan() throws Throwable {
 		
 				 System.out.println("New appraisal creation started");
 				 
-					Thread.sleep(10000);
+					 Thread.sleep(10000);
 					 driver.findElement(By.xpath("//div[@class='breadcrumb-widget']//a[@class='icon-bars sidebar-toggle']")).click();
 					 Thread.sleep(2000);
 					 driver.findElement(By.xpath("//app-com-render[1]/div[1]/app-side-menu[1]/ul[1]/li[2]/a[1]/span[1]")).click();
@@ -221,7 +221,7 @@ public class Testcases extends Open_closebrowser {
 				 driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[4]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				 Thread.sleep(1000);
 				 a.sendKeys(Keys.ARROW_DOWN);
-			     	a.sendKeys(Keys.ARROW_DOWN);
+			       	 a.sendKeys(Keys.ARROW_DOWN);
 				   a.sendKeys(Keys.ARROW_DOWN);
 				   a.sendKeys(Keys.ENTER);
 				   a.build().perform();
@@ -229,7 +229,7 @@ public class Testcases extends Open_closebrowser {
 				
 				driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				 Thread.sleep(2000);
-				driver.findElement(By.xpath("//div[2]/ul[1]/li[1]/span[1]")).click();
+				 driver.findElement(By.xpath("//div[2]/ul[1]/li[1]/span[1]")).click();
 				 Thread.sleep(2000);
 			
 				
@@ -506,8 +506,8 @@ public class Testcases extends Open_closebrowser {
                  driver.findElement(By.xpath("//div[@class='main-content']//li[3]//a[1]")).click();
                  System.out.println("After clicking review button");
             	 Thread.sleep(2000);
-                String text=driver.findElement(By.xpath("//div[1]/div[2]/div[2]/div[1]")).getText();
-                System.out.println("text if we click on Review button "+text);
+                 String text=driver.findElement(By.xpath("//div[1]/div[2]/div[2]/div[1]")).getText();
+                 System.out.println("text if we click on Review button "+text);
                 
 					
              	 Thread.sleep(2000);
@@ -515,14 +515,14 @@ public class Testcases extends Open_closebrowser {
                  driver.findElement(By.xpath("/html/body/app-root/app-page-layout/div[2]/div[3]/div/app-page/div/zc-page-render/zc-block-tree-node/zc-block-tree-node/app-com-render/div/zc-widget-stage-form/zc-stage-form/zc-stage-view/div/div[2]/div[1]/button")).click();
             	 Thread.sleep(2000);
                  driver.findElement(By.xpath("//*[@id=\"approvalActionComment\"]")).sendKeys("ok");
-                String text1= driver.findElement(By.xpath("//div/zc-widget-stage-form/zc-stage-form/zc-stage-view/div/div[2]/div")).getText();
-                System.out.println("After forwaring text :"+text1);
+                 String text1= driver.findElement(By.xpath("//div/zc-widget-stage-form/zc-stage-form/zc-stage-view/div/div[2]/div")).getText();
+                 System.out.println("After forwaring text :"+text1);
                  
            	   Thread.sleep(2000);
-                 driver.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/div/zc-widget-form/div/div/div/form/formly-form/div/button")).click();
+                   driver.findElement(By.xpath("/html/body/ngb-modal-window/div/div/div[2]/div/zc-widget-form/div/div/div/form/formly-form/div/button")).click();
 
                  
-                 String text2=driver.findElement(By.xpath("//div[1]/div[1]/div[1]/div[2]/span[1]/span[1]")).getText();
+                  String text2=driver.findElement(By.xpath("//div[1]/div[1]/div[1]/div[2]/span[1]/span[1]")).getText();
                
 				 System.out.println(text2);
 				 if(text2.contains("Subm")) {
@@ -561,7 +561,7 @@ public class Testcases extends Open_closebrowser {
 				  //To scroll the page down
 				  ((JavascriptExecutor)driver).executeScript("window.scrollBy(200,300)");
 				  Thread.sleep(8000);
-				driver.findElement(By.xpath("//zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
+				  driver.findElement(By.xpath("//zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				  Thread.sleep(1000);
 				 Actions f = new Actions(driver);
 				 f.sendKeys(Keys.ARROW_DOWN);
@@ -570,7 +570,7 @@ public class Testcases extends Open_closebrowser {
 				 f.sendKeys(Keys.ARROW_DOWN);
 				 f.sendKeys(Keys.ENTER);
 				 f.build().perform();
-				  Thread.sleep(2000);
+				 Thread.sleep(2000);
 				 // ((JavascriptExecutor)driver).executeScript("window.scrollBy(200,300)");
 				 driver.findElement(By.xpath("//*[@id=\"entrepreneur@entre_proff_hist\"]")).clear();
 				      driver.findElement(By.xpath("//*[@id=\"entrepreneur@entre_proff_hist\"]")).sendKeys("ok");
