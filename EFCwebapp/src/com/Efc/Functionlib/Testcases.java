@@ -105,7 +105,7 @@ public class Testcases extends Open_closebrowser {
 			 }
 			 
 			    @SuppressWarnings("static-access")
-		     	public static void navigatesTonewAppraisal() throws Throwable {
+		       	    public static void navigatesTonewAppraisal() throws Throwable {
 				
 				co.clickonButton(driver, "xpath", (p1.getkeyvalue("menuid")));
 				co.clickonButton(driver, "xpath", (p1.getkeyvalue("appraisalid")));
@@ -132,7 +132,7 @@ public class Testcases extends Open_closebrowser {
 				}
 				
 					 	
-			 public static void  womenLoan() throws Throwable {
+			     public static void  womenLoan() throws Throwable {
 			
 				 System.out.println("New appraisal creation started");
 				 
@@ -220,25 +220,25 @@ public class Testcases extends Open_closebrowser {
 				 //here we have to change if we want select a women ,to just one tap down 
 				 driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/zc-widget-form[1]/div[1]/div[1]/div[1]/form[1]/formly-form[1]/formly-field[4]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				 Thread.sleep(1000);
-				 a.sendKeys(Keys.ARROW_DOWN);
-			       	 a.sendKeys(Keys.ARROW_DOWN);
+				   a.sendKeys(Keys.ARROW_DOWN);
+			       	   a.sendKeys(Keys.ARROW_DOWN);
 				   a.sendKeys(Keys.ARROW_DOWN);
 				   a.sendKeys(Keys.ENTER);
 				   a.build().perform();
-					 Thread.sleep(2000);
+				   Thread.sleep(2000);
 				
-				driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
+				 driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				 Thread.sleep(2000);
 				 driver.findElement(By.xpath("//div[2]/ul[1]/li[1]/span[1]")).click();
 				 Thread.sleep(2000);
 			
 				
-			    driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
+			     driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
 				
 
-				 Thread.sleep(2000);
+				Thread.sleep(2000);
 				a.sendKeys(Keys.ARROW_DOWN);
-				 Thread.sleep(2000);
+				Thread.sleep(2000);
 				a.sendKeys(Keys.ENTER);
 				a.build().perform();
 				//System.out.println("selected client name");
@@ -283,7 +283,7 @@ public class Testcases extends Open_closebrowser {
 				 Thread.sleep(2000);
 				 driver.findElement(By.xpath("//div[1]/form[1]/formly-form[1]/formly-field[4]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				 a.sendKeys(Keys.ARROW_DOWN);
-		         a.sendKeys(Keys.ARROW_DOWN);
+		                 a.sendKeys(Keys.ARROW_DOWN);
 				 a.sendKeys(Keys.ENTER);
 				 a.build().perform();
 				 Thread.sleep(2000);
@@ -295,8 +295,8 @@ public class Testcases extends Open_closebrowser {
 				 Thread.sleep(2000);
 				 System.out.println("selected client name");
 				
-			    driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
-				 Thread.sleep(2000);
+			        driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
+				Thread.sleep(2000);
 				a.sendKeys(Keys.ARROW_DOWN);
 				Thread.sleep(3000);
 				a.sendKeys(Keys.ENTER);
