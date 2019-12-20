@@ -30,12 +30,12 @@ public class Testcases extends Open_closebrowser {
 		System.out.println("Application started");
 		co.sendingData(driver, "xpath", p1.getkeyvalue("userid"), p1.getkeyvalue("username"));
 		co.sendingData(driver, "xpath", p1.getkeyvalue("passwordid"),p1.getkeyvalue("password"));
-	    co.clickonButton(driver, "xpath", p1.getkeyvalue("loginbtnid")); 
+	        co.clickonButton(driver, "xpath", p1.getkeyvalue("loginbtnid")); 
 			    String actualUrl="http://efcdev.firstaccess.co/#/loan/dashboard/dashboard";
 			    co.staticwait(driver);
 		        String expectedUrl= driver.getCurrentUrl();
 		        System.out.println(expectedUrl); 
-		     if(actualUrl.equalsIgnoreCase(expectedUrl)) {
+		        if(actualUrl.equalsIgnoreCase(expectedUrl)) {
 		    	 System.out.println("Test Passed");
 		     }
 		     else {
@@ -87,7 +87,7 @@ public class Testcases extends Open_closebrowser {
 				      	
 				    	 for(int j=1;j<col.size();j++){
 				    		 String cols =col.get(j).getText();
-				 	    	System.out.println(cols);
+				 	    	 System.out.println(cols);
 				    	 
 						
 				    	   if(cols.equalsIgnoreCase(p1.getkeyvalue("nameinifcondition"))) {
@@ -136,7 +136,7 @@ public class Testcases extends Open_closebrowser {
 			
 				 System.out.println("New appraisal creation started");
 				 
-				Thread.sleep(10000);
+				 Thread.sleep(10000);
 				 driver.findElement(By.xpath("//div[@class='breadcrumb-widget']//a[@class='icon-bars sidebar-toggle']")).click();
 				 Thread.sleep(2000);
 				 driver.findElement(By.xpath("//app-com-render[1]/div[1]/app-side-menu[1]/ul[1]/li[2]/a[1]/span[1]")).click();
@@ -243,8 +243,8 @@ public class Testcases extends Open_closebrowser {
 				a.build().perform();
 				//System.out.println("selected client name");
 				
-				Thread.sleep(3000);
-				driver.findElement(By.xpath("//div[1]/form[1]/formly-form[1]/div[1]/button[2]")).click();
+				 Thread.sleep(3000);
+				 driver.findElement(By.xpath("//div[1]/form[1]/formly-form[1]/div[1]/button[2]")).click();
 				 System.out.println("New appraisal creation completed");
 				 Thread.sleep(6000);
 				 
@@ -257,7 +257,7 @@ public class Testcases extends Open_closebrowser {
 				 
 				 System.out.println("New appraisal creation started");
 				
-					Thread.sleep(4000);
+					 Thread.sleep(4000);
 					 driver.findElement(By.xpath("//div[@class='breadcrumb-widget']//a[@class='icon-bars sidebar-toggle']")).click();
 					 Thread.sleep(2000);
 					 driver.findElement(By.xpath("//app-com-render[1]/div[1]/app-side-menu[1]/ul[1]/li[2]/a[1]/span[1]")).click();
@@ -291,9 +291,9 @@ public class Testcases extends Open_closebrowser {
 				driver.findElement(By.xpath("//formly-field[5]/zc-wrapper-label[1]/zc-wrapper-fieldset[1]/div[1]/zc-wrapper-validation-messages[1]/zc-field-select[1]/div[1]/p-dropdown[1]/div[1]/div[3]")).click();
 				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//div[2]/ul[1]/li[1]/span[1]")).click();
+				 driver.findElement(By.xpath("//div[2]/ul[1]/li[1]/span[1]")).click();
 				 Thread.sleep(2000);
-				System.out.println("selected client name");
+				 System.out.println("selected client name");
 				
 			    driver.findElement(By.xpath("//p-autocomplete[1]/span[1]/button[1]")).click();
 				 Thread.sleep(2000);
